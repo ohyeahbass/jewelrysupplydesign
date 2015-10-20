@@ -1,0 +1,25 @@
+hello
+<div ng-controller='adminController'>
+	<input type="text"placeholder="name" ng-model='product.name'/>
+	<input type="text"placeholder="types" ng-model='product.types'/>
+	<input type="text"	placeholder="short description" ng-model='product.shortDesc'/>
+	<input type="text" placeholder="sku" ng-model='product.sku'/>
+	<input type="text" placeholder='long description' ng-model='product.longDesc'/>
+	<input type="text" placeholder='qty' ng-model='product.qty'>
+	<input type="text" placeholder='price' ng-model='product.price'>
+	<input type="text" placeholder = 'img' ng-model='product.img1'/>
+	<input type="text" placeholder = 'img' ng-model='product.img2'/>
+	<input type="text" placeholder = 'img' ng-model='product.img3'/>
+	<input type="text" placeholder = 'img' ng-model='product.img4'/>
+	<input type="text" placeholder = 'img' ng-model='product.img5'/>
+	<input type="text" placeholder = 'img' ng-model='product.img6'/>
+	<input type="text" placeholder = 'img' ng-model='product.img7'/>
+
+
+	<button ng-click='submitNewProduct(product)'>submit</button>
+	
+</div>
+<div >
+	<button ng-click='adminGetProducts()'>get products</button>
+	<admin-product-dir ng-repeat='product in products'></admin-product-dir>
+</div>

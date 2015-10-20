@@ -1,0 +1,88 @@
+<!DOCTYPE html >
+<html lang="en" ng-app ='adminApp'>
+<head>
+    <meta charset="UTF-8">
+    <title>CopperPaisely</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+    <body class = 'container'>
+        <div ng-controller='userCtrl'>
+           Welcome {{customerName}} 
+        
+            <div>
+                <a class = "brand-name"href='#/home'>The Copper Paisley</a>
+            </div>
+            <div class='whole-navbar'>
+                <div class= 'navbar' ><a href='#/productsList'>products</a></div>
+                <div class= 'navbar'><a href='#/about'>about</div>
+                <div class= 'navbar'><a href='#/contact'>contact</div>
+                <div class= 'navbar' >
+                        
+                            <div ng-show = '!customerName'>
+                                <div ng-click='showLog=!showLog'>login/register</div>
+                                <div ng-show='showLog'>
+                                <div ng-click='reglog=!reglog'>register/login</div>
+                                    <div ng-show = 'reglog'>
+                                         register
+                                         <input type="text" ng-model='user.email' placeholder='email'>
+                                         <input type="text" ng-model='user.name' placeholder='name'>
+                                         <input type="password" ng-model='user.password' placeholder='password'>
+                                         <input type="text" ng-model='user.address' placeholder='address'>
+                                         <input type="text" ng-model='user.city' placeholder='city'>
+                                         <input type="text" ng-model='user.state' placeholder='state'>
+                                         <input type="text" ng-model='user.zip' placeholder='zip'>
+                                         <button ng-click='submitNewUser(user)'>submit</button>
+                                    </div> 
+                                    <div ng-hide='reglog'>
+                                        login
+                                        <input type="text" ng-model='user.email' placeholder="email"> 
+                                        <input type="password" ng-model='user.password' placeholder="password"> 
+                                        <button ng-click='loginSubmit(user)'>submit</button>
+                                    </div> 
+                                    </div>
+                                </div>    
+                                <div ng-show='customerName'>
+                                    <a href='/logout'>logout</a>
+                                </div>
+                            </div>
+                        
+                            
+                    <a href = '#/checkout'>cart</a>  
+                </div>
+               
+                
+               <div ng-controller='ShoppingCartCtrl'>
+               </div>   
+                    {{getting}}
+                    {{numb}}
+                </div>
+                   
+               </div>
+            </div>
+        </div>
+        
+        
+        
+        <ng-view></ng-view>
+        
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
+        <script src="app.js"></script>
+        <script src="js/products/productsController.js"></script>
+        <script src="js/products/productsService.js"></script>
+        <script src="js/admin/adminController.js"></script>
+        <script src="js/admin/adminService.js"></script>
+        <script src="js/home/homeCtrl.js"></script>
+        <script src="js/userLogin/userCtrl.js"></script>
+        <script src="js/userLogin/userService.js"></script>
+        <script src="js/admin/adminProductDir.js"></script>
+        <script src='ShoppingCartCtrl.js'></script>
+        <script src="js/checkout/checkoutCtrl.js"></script>
+        
+        
+    </body>
+
+</html>

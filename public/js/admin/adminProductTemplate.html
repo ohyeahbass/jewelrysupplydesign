@@ -1,0 +1,96 @@
+<div>
+		<table >
+			<tr>
+				<td>sku:{{product.sku}}
+					<div ng-show='mustShow'placeholder='edit'>
+						<input type="text" ng-model='sku'>
+						<button ng-click="productEdit(product._id,{sku:sku})"></button>
+					</div>
+				</td>
+				<td>name:{{product.name}}
+					<div ng-show='mustShow'placeholder='edit'>
+						<input type="text" ng-model='name'>
+						<button ng-click="productEdit(product._id,{name:name})"></button>
+					</div>
+				</td>
+				<td>type:{{product.types}}
+					<div ng-show='mustShow'placeholder='edit'>
+						<input type="text" ng-model='types'>
+						<button ng-click="productEdit(product._id,{types:types})"></button>
+					</div>
+				</td>
+				<td>short description:{{product.shortDesc}}
+					<div ng-show='mustShow'placeholder='edit'>
+						<input type="text" ng-model='shortDesc'>
+						<button ng-click="productEdit(product._id,{shortDesc:shortDesc})"></button>
+					</div>
+				</td>
+				<td>long description:{{product.longDesc}}
+					<div ng-show='mustShow'placeholder='edit'>
+						<input type="text" ng-model='longDesc'>
+						<button ng-click="productEdit(product._id,{longDesc:longDesc})"></button>
+					</div>
+				</td>
+				<td>qty:{{product.qty}}
+					<div ng-show='mustShow'placeholder='edit'>
+						<input type="text" ng-model='qty'>
+						<button ng-click="productEdit(product._id,{qty:qty})"></button>
+					</div>
+				</td>
+				<td>price:{{product.price}}
+					<div ng-show='mustShow'placeholder='edit'>
+						<input type="text" ng-model='price'>
+						<button ng-click="productEdit(product._id,{price:price})"></button>
+					</div>
+				</td>
+				
+				
+			</tr>
+			<tr>
+				<td>img:{{product.img1}}
+					<div ng-show='mustShow'placeholder='edit'>
+						<input type="text" ng-model='img1'>
+						<button ng-click="productEdit(product._id,{img:img1})"></button>
+					</div>
+				</td>
+				<td>img:{{product.img2}}
+					<div ng-show='mustShow'placeholder='edit'>
+						<input type="text" ng-model='img2'>
+						<button ng-click="productEdit(product._id,{img2:img2})"></button>
+					</div>
+				</td>
+				<td>img:{{product.img3}}
+					<div ng-show='mustShow'placeholder='edit'>
+						<input type="text" ng-model='img3'>
+						<button ng-click="productEdit(product._id,{img3:img3})"></button>
+					</div>
+				</td>
+				<td>img:{{product.img4}}
+					<div ng-show='mustShow'placeholder='edit'>
+						<input type="text" ng-model='img4'>
+						<button ng-click="productEdit(product._id,{img4:img4})"></button>
+					</div>
+				</td>
+				<td>img:{{product.img5}}
+					<div ng-show='mustShow'placeholder='edit'>
+						<input type="text" ng-model='img5'>
+						<button ng-click="productEdit(product._id,{img5:img5})"></button>
+					</div>
+				</td>
+				<td>img:{{product.img6}}
+					<div ng-show='mustShow'placeholder='edit'>
+						<input type="text" ng-model='img6'>
+						<button ng-click="productEdit(product._id,{img6:img6})"></button>
+					</div>
+				</td>
+				<td>img:{{product.img7}}
+					<div ng-show='mustShow'placeholder='edit'>
+						<input type="text" ng-model='img7'>
+						<button ng-click="productEdit(product._id,{img7:img7})"></button>
+					</div>
+				</td>
+			</tr>
+			<button ng-click="mustShow=!mustShow">edit</button>
+			<button ng-click="deleteProduct(product._id)">delete</button>
+		</table>
+	</div>

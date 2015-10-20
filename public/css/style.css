@@ -1,0 +1,56 @@
+.container{
+	padding:0;
+	background-image:  url(http://orig04.deviantart.net/89ea/f/2012/240/3/a/old_copper_by_allecca-d5cq7q3.jpg)
+}
+.brand-name{
+	font-size: 40px;
+	display: block;
+	padding-left:35%;
+}
+.whole-navbar{
+	padding-left:25%;
+}
+.navbar{
+	display: inline-block;
+	padding-left:5%;
+}
+a{
+	text-decoration: none;
+}
+.home-container{
+	padding:0 4% 0 4%;
+}
+
+.home-img{
+	padding-left:10%;
+	width:80%;
+	height:80%;
+	padding-top:4%;
+	padding-bottom:4%;
+}
+.home-background{
+	background-image:  url(http://www.wallpaperseries.com/files/wallpapers-1004/Turquoise-Damask-Background-Wallpaper.jpg);
+	  
+	
+}
+.product{
+	display:inline-block;
+}
+.prods-img{
+	height:200px;
+	width:200px;
+	
+}
+.prod-align{
+	display: inline-block;
+}
+.prod-img1{
+	height:80px;
+	width:80px;
+}
+.prod{
+	display: inline-block;
+}
+.inline{
+	display: inline;
+}
