@@ -12,6 +12,12 @@ module.exports = {
 			else{res.json(result)}
 		})
 	},
+	find:function(req, res){
+		Products.findById(req.params.id, function(err, result){
+			if(err){res.send(err)}
+			else{res.json(result)}
+		})
+	},
 	update:function(req,res){
 		Products.findByIdAndUpdate(req.body.id, req.body.updatedProd, {new:true}, function(err,result){
 			if(err){res.send(err);}

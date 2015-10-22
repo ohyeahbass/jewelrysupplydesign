@@ -3,7 +3,7 @@ hello
 	<input type="text"placeholder="name" ng-model='product.name'/>
 	<input type="text"placeholder="types" ng-model='product.types'/>
 	<input type="text"	placeholder="short description" ng-model='product.shortDesc'/>
-	<input type="text" placeholder="sku" ng-model='product.sku'/>
+
 	<input type="text" placeholder='long description' ng-model='product.longDesc'/>
 	<input type="text" placeholder='qty' ng-model='product.qty'>
 	<input type="text" placeholder='price' ng-model='product.price'>
@@ -17,9 +17,13 @@ hello
 
 
 	<button ng-click='submitNewProduct(product)'>submit</button>
-	
+<div>
+	<button ng-click='getOrders()'>get orders</button>
+	<div ng-repeat='order in orders'>{{order}}</div>
+</div>	
 </div>
 <div >
 	<button ng-click='adminGetProducts()'>get products</button>
 	<admin-product-dir ng-repeat='product in products'></admin-product-dir>
 </div>
+

@@ -1,56 +1,70 @@
-.container{
-	padding:0;
-	background-image:  url(http://orig04.deviantart.net/89ea/f/2012/240/3/a/old_copper_by_allecca-d5cq7q3.jpg)
-}
 .brand-name{
-	font-size: 40px;
-	display: block;
-	padding-left:35%;
+	width:30%;
+	height:30%;
+	/*padding-left:40%;*/
+	flex-grow: none 
+	
+}.navbar{
+	display:inline;
+	padding-left:10%;
+}.inline{
+	display:inline;
 }
-.whole-navbar{
-	padding-left:25%;
+.home-img{
+      width:100%;
+	  margin-top:-15px;
 }
-.navbar{
-	display: inline-block;
+body{
+	background-image:url('http://www.buckheadpetpals.com/wp-content/uploads/2014/01/pale_tan.jpg');
+	font-family: 'Special Elite', cursive;
+	color: #948274;
+	
+}
+.container{
+	background-color:white;
+	margin-top:-15px;
+}
+#top-bar{
+	background-color:#61b1a9;
+	padding:10px 0px 10px 0px;
+	
+}
+#top-cart-font{
+	color:#48331d;
 	padding-left:5%;
 }
-a{
-	text-decoration: none;
-}
-.home-container{
-	padding:0 4% 0 4%;
-}
-
-.home-img{
-	padding-left:10%;
+#nav-search input {
 	width:80%;
-	height:80%;
-	padding-top:4%;
-	padding-bottom:4%;
+	margin-bottom:30px;
 }
-.home-background{
-	background-image:  url(http://www.wallpaperseries.com/files/wallpapers-1004/Turquoise-Damask-Background-Wallpaper.jpg);
-	  
-	
+.border-right{
+	border-right:  3px solid gray;
+	padding-right:10%;
 }
-.product{
-	display:inline-block;
+#mission-statement1{
+	vertical-align: middle;
+	font-size:200%;
 }
-.prods-img{
-	height:200px;
-	width:200px;
-	
+#mission-statement2{
+	font-size:200%;
 }
-.prod-align{
-	display: inline-block;
+.flexed{
+	display:flex;
+	align-items:center;
+	padding-left:18%;
 }
-.prod-img1{
-	height:80px;
-	width:80px;
+mission-statement1{
+	flex-grow:1;
 }
-.prod{
-	display: inline-block;
+mission-statement2{
+	flex-grow:1;
 }
-.inline{
-	display: inline;
+.underlined{
+	width:80%;
+	margin-top:15px;
+	margin-left:10%;
+	border-bottom:3px solid gray;
+}
+a{
+	color:#948274;
 }

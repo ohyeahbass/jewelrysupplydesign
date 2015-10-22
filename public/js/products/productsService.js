@@ -8,8 +8,7 @@ adminApp.service('productsService', function($http, $q){
 		url:'http://localhost:3000/products'
 	}).then(
 		function(res){
-			console.log(res)
-			var products=res.data;
+			var products=res;
 			deferred.resolve(products);
 		})		
 		return deferred.promise;

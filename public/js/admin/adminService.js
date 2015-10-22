@@ -45,4 +45,22 @@ adminApp.service('adminService',['$http', '$q', function($http, $q){
 			
 		})
 	}
+	
+	this.getOrder=function(){
+		var deferred=$q.defer();
+		$http({
+			method:"GET",
+			url:'http://localhost:3000/order'
+		}).then(function(res){
+			console.log(res)
+			var order=res;
+			console.log(order)
+			deferred.resolve(order)
+		})
+		return deferred.promise
+	}
+	
+	
+	
+	
 }])

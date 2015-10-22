@@ -14,21 +14,24 @@
 	</div>
 	<div class = 'all-prods'>
 		<div class = 'subtotal'>
-			subtotal:
+			subtotal: ${{subTotal}}
 		</div>
-		<div class = 'shipping'>
-			ups overnight<input type="checkbox">
-			ups standard<input type="checkbox">
-			USPS<input type="checkbox">
-			fedex overnight<input type="checkbox">
-			fed ex standard<input type="checkbox">
-			shipping:
-		</div>
+		<form>
+			ups overnight:$10<input name='shipping'type="radio" ng-click="shipping(1)">
+			ups standard:free<input name='shipping'type="radio" ng-click="shipping(2)">
+			USPS:free<input  name='shipping' type="radio" ng-click="shipping(3)" checked>
+			fedex standard:free<input  name='shipping'type="radio" ng-click="shipping(4)">
+			fedex overnight:$10<input name='shipping' type="radio"ng-click="shipping(5)">
+		</form>
 		<div class = 'tax'>
 			tax:
 		</div>
 		<div class ='total'>
-			total:{{total}}
+			total: ${{total}}
 		</div>
+		<button ng-click="payNow(prodInfo)">purchase</button>
 	</div>
 </div>
+
+
+

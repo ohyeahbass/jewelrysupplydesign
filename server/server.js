@@ -9,6 +9,7 @@ var ProductCtrl = require('./controllers/ProductCtrl')
 var app = express();
 var UserCtrl=require('./controllers/UserCtrl')
 var config=require('./config')
+var OrderCtrl =require('./controllers/OrderCtrl')
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -42,8 +43,14 @@ app.get('/logout', function(req,res){
 
 app.post('/products', ProductCtrl.create);
 app.get('/products', ProductCtrl.read);
+app.get('/products/:id', ProductCtrl.find);
 app.put('/products', ProductCtrl.update);
 app.delete('/products/:id', ProductCtrl.delete);
+
+app.post('/order', OrderCtrl.create);
+app.get('/order', OrderCtrl.read);
+app.put('/order', OrderCtrl.update);
+app.delete('/order', OrderCtrl.delete);
 
 var port = 3000;
 var mongoURI = 'mongodb://localhost:27017/dataBase';

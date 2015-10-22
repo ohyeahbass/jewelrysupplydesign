@@ -1,27 +1,27 @@
-<div ng-contoller = 'getProducts'>
+<div>
 	<div class='product'ng-repeat='product in products'>
-		<div class='prod-align'>
-			<img class='prods-img' src="{{product.img1}}" alt="">
-		</div>
-		<div class='prod-align'>
-			<h1 class='prods'>{{product.name}}</h1>
-			<ul>
-			<li class='prods'>{{product.longDesc}}</li>
-			<li class='prods'>{{product.price}}</li>
-			<form>
-				<select name="color">
-					color
-					<option value="red">red</option>
-					<option value="blue">blue</option>
-					<option value="green" selected>green</option>
-					<option value="yellow">orange</option>
-				</select>
-			</form>
-			</ul>
-			
-			<input  type="button" ng-click='addToCart(product)' placeholder="add to cart">
-		</div>	
-		
-		
+		<button ng-click='getDBProduct(product)'>get</button>
+			<div class='prod-align'n>
+				<img class='prods-img' src="{{product.img1}}" alt="">
+			</div>
+			<div class='prod-align'>
+				<h1 class='prods'>{{product.name}}</h1>
+				<ul>
+				<li class='prods'>{{product.longDesc}}</li>
+				<li class='prods'>{{product.price}}</li>
+				<!--<form>
+					<select name="color">
+						color
+						<option value="red">red</option>
+						<option value="blue">blue</option>
+						<option value="green" selected>green</option>
+						<option value="yellow">orange</option>
+					</select>
+				</form>-->
+				</ul>
+				
+				<input  type="button" ng-click='addToCart(product)' placeholder="add to cart">
+			</div>	
+		<!--</div>-->
 	</div>
 </div>
