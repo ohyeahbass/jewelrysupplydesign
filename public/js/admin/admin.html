@@ -1,29 +1,41 @@
-hello
-<div ng-controller='adminController'>
-	<input type="text"placeholder="name" ng-model='product.name'/>
-	<input type="text"placeholder="types" ng-model='product.types'/>
-	<input type="text"	placeholder="short description" ng-model='product.shortDesc'/>
 
-	<input type="text" placeholder='long description' ng-model='product.longDesc'/>
-	<input type="text" placeholder='qty' ng-model='product.qty'>
-	<input type="text" placeholder='price' ng-model='product.price'>
-	<input type="text" placeholder = 'img' ng-model='product.img1'/>
-	<input type="text" placeholder = 'img' ng-model='product.img2'/>
-	<input type="text" placeholder = 'img' ng-model='product.img3'/>
-	<input type="text" placeholder = 'img' ng-model='product.img4'/>
-	<input type="text" placeholder = 'img' ng-model='product.img5'/>
-	<input type="text" placeholder = 'img' ng-model='product.img6'/>
-	<input type="text" placeholder = 'img' ng-model='product.img7'/>
+<div class= 'admin-page-container'>
 
-
-	<button ng-click='submitNewProduct(product)'>submit</button>
-<div>
-	<button ng-click='getOrders()'>get orders</button>
-	<div ng-repeat='order in orders'>{{order}}</div>
-</div>	
-</div>
-<div >
-	<button ng-click='adminGetProducts()'>get products</button>
-	<admin-product-dir ng-repeat='product in products'></admin-product-dir>
+	<div ng-controller='adminController'>
+		<button ng-click='newProd=!newProd'>hide adding products</button>
+		<div ng-hide='newProd'>
+		<input type="text"placeholder="name" ng-model='product.name'/>
+		<input type="text"placeholder="types" ng-model='product.types'/>
+		<input type="text"	placeholder="short description" ng-model='product.shortDesc'/>
+	
+		<input type="text" placeholder='long description' ng-model='product.longDesc'/>
+		<input type="text" placeholder='qty' ng-model='product.qty'>
+		<input type="text" placeholder='price' ng-model='product.price'>
+		<input type="text" placeholder = 'img' ng-model='product.img1'/>
+		<input type="text" placeholder = 'img' ng-model='product.img2'/>
+		<input type="text" placeholder = 'img' ng-model='product.img3'/>
+		<input type="text" placeholder = 'img' ng-model='product.img4'/>
+		<input type="text" placeholder = 'img' ng-model='product.img5'/>
+		<input type="text" placeholder = 'img' ng-model='product.img6'/>
+		<input type="text" placeholder = 'img' ng-model='product.img7'/>
+	
+		<button ng-click='submitNewProduct(product)'>submit</button>
+		</div>
+		<div>
+			<button ng-click='adminGetProducts()'>get products</button>
+			<button ng-click='hideProd=!hideProd'>hide products</button>
+			<admin-product-dir ng-hide='hideProd' ng-repeat='product in products'></admin-product-dir>
+		</div>
+		<div>
+			<button ng-click='getOrders()'>get orders</button>
+			<button ng-click='hideOrders=!hideOrders'>hide/show orders</button>
+			<div ng-hide='hideOrders'>
+				<admin-order-dir></admin-order-dir>
+			</div>
+		</div>
+		<div>
+			<button ng-click='getFulfillOrder()'>Fulfilled Order</button>
+		</div>	
+	</div>
 </div>
 

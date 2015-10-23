@@ -10,7 +10,7 @@ adminApp.service('adminService',['$http', '$q', function($http, $q){
 		}).then(function(response){
 			var products=response.data;
 			deferred.resolve(products)
-			console.log(response)
+			
 		})
 		return deferred.promise
 	}
@@ -21,7 +21,7 @@ adminApp.service('adminService',['$http', '$q', function($http, $q){
 			url:'http://localhost:3000/products'
 		}).then(function(res){
 			var products=res;
-			console.log(products)
+
 			deferred.resolve(products)
 		})
 		return deferred.promise
@@ -52,15 +52,32 @@ adminApp.service('adminService',['$http', '$q', function($http, $q){
 			method:"GET",
 			url:'http://localhost:3000/order'
 		}).then(function(res){
-			console.log(res)
+		
 			var order=res;
-			console.log(order)
+
 			deferred.resolve(order)
 		})
 		return deferred.promise
 	}
 	
-	
-	
+	this.fulfillOrder=function(ord){
+		return $http({
+			method:"POST",
+			url:'fulfill',
+			data:ord
+		}).then(function(res){
+			return res.data
+		})
+	}
+	this.getFulfillOrder=function(){
+		return $http({
+			method:'GET',
+			url:'fulfill'
+		}).then(function(res){
+			console.log(res.data)
+			return res.data
+			
+		})
+	}
 	
 }])

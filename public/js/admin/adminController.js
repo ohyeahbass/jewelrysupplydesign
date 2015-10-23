@@ -15,14 +15,14 @@ adminApp.controller('adminController', function($scope, adminService){
 	
 		
 	$scope.deleteProduct=function(){}
-	
 	$scope.getOrders=function(){
-		console.log('he')
 		adminService.getOrder().then(
 			function(res){
-				$scope.orders=res.data
+					$scope.orders=res.data		
 			}
 		) 
 	}
+	
+	
 	
 });

@@ -1,3 +1,25 @@
-<div>
-	
-</div>
+
+<div ng-repeat='order in orders'>
+<div class='admin-order-divider'></div>	
+new order
+<button ng-click='fulfillOrder(order.products)'></button>
+<div ng-repeat='item in order.products'>
+
+<table>
+	<thead>
+		<tr>
+			<th>name</th>
+			<th>qty</th>
+			<th>price</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>{{item.name}}</td>
+			<td>{{item.qty}}</td>
+			<td>{{item.price}}</td>
+		</tr>
+	</tbody>
+</table>
+</div>	
+</div>	

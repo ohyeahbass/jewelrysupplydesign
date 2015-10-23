@@ -1,25 +1,25 @@
-<div class = 'product-page'>
-	<div>
-		<div class='product-page-main-img'><img src="{{product.img1}}" alt=""></div>
+<div class = 'container'>
+	<div class='flexbox'>
+	<div class = 'product-page-info1'>
+		<img class="product-page-main-img" width='300' ng-src="{{mainImage}}">
 		<ul>
-			<li class='product-page-img1'><img src="{{product.img1}}" alt=""></li>
-			<li class='product-page-img2'><img src="{{product.img1}}" alt=""></li>
-			<li class='product-page-img3'><img src="{{product.img1}}" alt=""></li>
-			<li class='product-page-img4'><img src="{{product.img1}}" alt=""></li>
-			<li class='product-page-img5'><img src="{{product.img1}}" alt=""></li>
-			<li class='product-page-img6'><img src="{{product.img1}}" alt=""></li>
-			<li class='product-page-img7'><img src="{{product.img1}}" alt=""></li>
-			
+			<li ><img class='product-page-img' class='product-page-img'  ng-click='mainImg(product.img1)'ng-src="{{product.img1}}" alt=""></li>
+			<li ><img class='product-page-img' ng-click='mainImg(product.img2)'ng-src="{{product.img2}}" alt=""></li>
+			<li ><img class='product-page-img' ng-click='mainImg(product.img3)' ng-src="{{product.img3}}" alt=""></li>
+			<li ><img class='product-page-img' ng-click='mainImg(product.img4)' ng-src="{{product.img4}}" alt=""></li>
+			<li ><img class='product-page-img' ng-click='mainImg(product.img5)' ng-src="{{product.img5}}" alt=""></li>
+			<li ><img class='product-page-img' ng-click='mainImg(product.img6)' ng-src="{{product.img6}}" alt=""></li>
+			<li><img class='product-page-img'  ng-click='mainImg(product.img7)'ng-src="{{product.img7}}" alt=""></li>
 		</ul>
 	</div>
-	<div class = 'product-page-info'>
-		<h1 class = 'product-page-name'>{{product.name}}</h1>
-		<ul>
-			<li class='product-page-price'>{{product.price}}</li>
-			<li class='product-page-qty'></li>
-			<li class='product-page-type'>{{type}}</li>
-		</ul>
-		
+	<div class = 'product-page-info2'>
+		<h4 class = 'product-page-desc'>{{product.name}}</h4>
+		<p class='product-page-desc'>{{product.longDesc}}</p>
+		<p class='product-page-desc'>{{product.type}}</p>
+		<div>
+			<p class='inline'>${{product.price}}</p>
+			<button class='inline' id='price-left'ng-click='addToCart(product)'>add to cart</button>
+		</div>		
 	</div>
-	<button ng-click='addToCart(product)'></button>
+	</div>
 </div>

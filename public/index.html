@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>CopperPaisely</title>
+     <script src='https://code.jquery.com/jquery-1.11.3.min.js'></script>
       <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
 
@@ -13,27 +14,32 @@
     
 </head>
 
-<body>
+<body >
 <div ng-controller='userCtrl'>
     <div class='z-depth-5' id='top-bar'>
         {{customerName}}
-        <div ng-controller='ShoppingCartCtrl'></div>
-            <a id='top-cart-font'href='#/checkout'>cart</a>
+        <div ng-controller='ShoppingCartCtrl'>
+            <a id='top-cart-font'href='#/checkout'>cart{{cartCount}}</a>
         </div>
     </div>
-    <div  class = 'container'>
+    <div class = 'container'>
         <div class="z-depth-5">
          <ul class='flexed'>
-            <li class="inline" id='mission-statement1'>Artisan Jewelery</li>
+            <p id='mission-statement1' class="flow-text">Artisan Jewelery</p>
             <img class="brand-name" href='#/home' src="img/logo.gif" alt=""></img>
-            <li class="inline" id='mission-statement2'>Custom Accesories</li>
+            <p id='mission-statement2' class="flow-text">Custom Accesories</p>
         </ul>
-        <div class='nav-wrapper'>
-            <ul>
+        <div >
+            <ul class='nav-wrapper'>
                 <li class='navbar' ><a class = 'border-right'href='#/productsList'>products</a></li>
                 <li class='navbar'><a class='border-right'href='#/about'>about</a></li>
                 <li class= 'navbar'><a class='border-right'href='#/contact'>contact</a></li>
-                <li class= 'navbar' >
+                <li id='nav-search' class= 'navbar' ><a ng-click='search=!search'class='border-right'>search</a>
+                    <div ng-show='search'>
+                       <input type="text" placeholder='search'> 
+                    </div>
+                </li>
+                <li class= 'navbar'>
                     <div ng-show = '!customerName' class='inline'>
                         <a ng-click='showLog=!showLog'>login</a>
                         <div ng-show='showLog'>
@@ -48,38 +54,39 @@
                                     <input type="text" ng-model='user.city' placeholder='city'>
                                     <input type="text" ng-model='user.state' placeholder='state'>
                                     <input type="text" ng-model='user.zip' placeholder='zip'>
-                                    <button ng-click='submitNewUser(user)'>submit</button>
+                                    <button onclick="Materialize.toast('Thanks for Signing In!', 4000)" ng-click='submitNewUser(user)'>submit</button>
                             </div> 
                             <div ng-hide='reglog'>
                                 login
                                 <input type="text" ng-model='user.email' placeholder="email"> 
                                 <input type="password" ng-model='user.password' placeholder="password"> 
-                                <button ng-click='loginSubmit(user)'>submit</button>
+                                <button onclick="Materialize.toast()" ng-click='loginSubmit(user)'>submit</button>
                             </div> 
                         </div>
                     </div>
                     <div ng-show='customerName'>
-                        <button href='/logout'>logout</button>
+                        <a href='/logout' onclick = 'Materialize.toast("Logged Out")'>logout</a>
                     </div>
                     
-             <div class='underlined'></div>
+             
              
           
           </ul>
-          <li id='nav-search' class= 'navbar'><input type="text" placeholder='search'></li>
+          <div class='underlined'></div>
        </div>
 
        </div>
     
 </div>
+</div>
 
     <ng-view></ng-view>
-
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
+   
     <script src="app.js"></script>
     <script src="js/products/productsController.js"></script>
     <script src="js/products/productsService.js"></script>
@@ -96,6 +103,7 @@
     <script src='js/products/productService.js'></script>
     <script src='js/products/productController.js'></script>
     <script src='js/products/cartService.js'></script>
+    
 
 
 </body>
