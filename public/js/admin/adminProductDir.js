@@ -7,6 +7,7 @@ adminApp.directive('adminProductDir', function(){
 			$scope.productEdit=function(id,prod){
 				adminService.productEdit(id,prod).then(
 					function(res){
+						console.log(res);
 						$scope.products=res.data
 				    })
 		    };	

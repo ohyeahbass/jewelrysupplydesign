@@ -1,20 +1,23 @@
 var adminApp=angular.module('adminApp');
 adminApp.controller('ShoppingCartCtrl', function($scope, cartService){
 	
-	$scope.cartCount=num
-	var itemNumber=localStorage.getItem('text')
-	var num=0
-	 var cart=function(){
-		 for(var i=0;i<itemNumber;i++){
-			 for(var prop in itemNumber[i]){
-				 if(prop===product.qty){
-					 num+=itemNumber[i].qty
-				 }
-			 }
-		 }
-	 }
-	
-	
+
+	console.log("hi")
+	$scope.cartCount=0
+	function totalCart(){
+		var toats=JSON.parse(localStorage.getItem('text'))
+		var array=[]
+						
+		for(var prop in toats){		
+			array.push(toats[prop].qty)	
+		}
+		for(var i=0;i<array.length;i++){
+			var num=Number(array[i])
+			$scope.cartCount+=num
+		}
+		return $scope.cartCount
+	}
+	totalCart()
 	
 	
 			

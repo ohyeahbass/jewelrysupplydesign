@@ -10,83 +10,30 @@
 
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css"><link href='https://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
     
 </head>
 
 <body >
-<div ng-controller='userCtrl'>
+<!--<div ng-controller='userCtrl'>
     <div class='z-depth-5' id='top-bar'>
+        <a href='#/' class='top-bar-logo'><img src="img/logo.gif"></img></a>
         {{customerName}}
         <div ng-controller='ShoppingCartCtrl'>
             <a id='top-cart-font'href='#/checkout'>cart{{cartCount}}</a>
         </div>
     </div>
-    <div class = 'container'>
-        <div class="z-depth-5">
-         <ul class='flexed'>
-            <p id='mission-statement1' class="flow-text">Artisan Jewelery</p>
-            <img class="brand-name" href='#/home' src="img/logo.gif" alt=""></img>
-            <p id='mission-statement2' class="flow-text">Custom Accesories</p>
-        </ul>
-        <div >
-            <ul class='nav-wrapper'>
-                <li class='navbar' ><a class = 'border-right'href='#/productsList'>products</a></li>
-                <li class='navbar'><a class='border-right'href='#/about'>about</a></li>
-                <li class= 'navbar'><a class='border-right'href='#/contact'>contact</a></li>
-                <li id='nav-search' class= 'navbar' ><a ng-click='search=!search'class='border-right'>search</a>
-                    <div ng-show='search'>
-                       <input type="text" placeholder='search'> 
-                    </div>
-                </li>
-                <li class= 'navbar'>
-                    <div ng-show = '!customerName' class='inline'>
-                        <a ng-click='showLog=!showLog'>login</a>
-                        <div ng-show='showLog'>
-                            <button ng-click='reglog=!reglog'>register/login</button>
-                            <button ng-click='showLog=!showLog'>hide</button>
-                            <div ng-show = 'reglog'>
-                                    register
-                                    <input type="text" ng-model='user.email' placeholder='email'>
-                                    <input type="text" ng-model='user.name' placeholder='name'>
-                                    <input type="password" ng-model='user.password' placeholder='password'>
-                                    <input type="text" ng-model='user.address' placeholder='address'>
-                                    <input type="text" ng-model='user.city' placeholder='city'>
-                                    <input type="text" ng-model='user.state' placeholder='state'>
-                                    <input type="text" ng-model='user.zip' placeholder='zip'>
-                                    <button onclick="Materialize.toast('Thanks for Signing In!', 4000)" ng-click='submitNewUser(user)'>submit</button>
-                            </div> 
-                            <div ng-hide='reglog'>
-                                login
-                                <input type="text" ng-model='user.email' placeholder="email"> 
-                                <input type="password" ng-model='user.password' placeholder="password"> 
-                                <button onclick="Materialize.toast()" ng-click='loginSubmit(user)'>submit</button>
-                            </div> 
-                        </div>
-                    </div>
-                    <div ng-show='customerName'>
-                        <a href='/logout' onclick = 'Materialize.toast("Logged Out")'>logout</a>
-                    </div>
-                    
-             
-             
-          
-          </ul>
-          <div class='underlined'></div>
-       </div>
-
-       </div>
     
-</div>
-</div>
+</div>-->
+
 
     <ng-view></ng-view>
-
+    
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
-   
     <script src="app.js"></script>
     <script src="js/products/productsController.js"></script>
     <script src="js/products/productsService.js"></script>
@@ -97,13 +44,18 @@
     <script src="js/userLogin/userService.js"></script>
     <script src="js/admin/adminProductDir.js"></script>
     <script src='ShoppingCartCtrl.js'></script>
+  
     <script src="js/checkout/checkoutCtrl.js"></script>
     <script src='js/checkout/checkoutSrvc.js'></script>
     <script src='js/admin/adminOrderDir.js'></script>
     <script src='js/products/productService.js'></script>
     <script src='js/products/productController.js'></script>
     <script src='js/products/cartService.js'></script>
-    
+    <script src='js/admin/adminFulfillDir.js'></script>
+    <script src='angular-materialize.js'></script>
+    <script src='js/home/navTemplate.js'></script>
+    <script src='js/home/footerTemp.js'></script>
+    <script src='js/home/prodPageNav.js'></script>
 
 
 </body>

@@ -1,33 +1,29 @@
-<div class='container'>
+<div class= 'nav-template'>
+	<nav-template></nav-template>
+</div>
+<div >
+	<ul>
+		
+	</ul>
+	
 	
 	<div class="product-wrap">
 	<!--<span class='product-in-products'ng-repeat='product in products'>-->
-	<div class='product-in-products'ng-repeat='product in products'>
+	<div class='product-in-products' ng-repeat='product in products | filter: key'>
 		
 		<a ng-click='getDBProduct(product)'>
-		<div class='prod-align'>
-			<img class='prods-img' src="{{product.img1}}" alt="">
-		</div>
-		<div class='prod-align'>
-			<!--<h5 class='prods'>{{product.name}}</h5>-->
-			<h5 class='prods'>{{product.name}}</h5>
-			<ul class='prods-info'>
-				<li class='prods-short-desc'>{{product.shortDesc}}</li>
-				<li class='prods-price'>${{product.price}}</li>
-				<!--<form>
-					<select name="color">
-						color
-						<option value="red">red</option>
-						<option value="blue">blue</option>
-						<option value="green" selected>green</option>
-						<option value="yellow">orange</option>
-					</select>
-				</form>-->
-			</ul>	
-			<!--<input  type="button" ng-click='addToCart(product)' placeholder="add to cart">-->
-		</div>	
+			<div class='product-in-products-info'>
+				<h4 id='prods1'>{{product.name}}</h4>
+				<img class='prods-img' src="{{product.img2}}" alt="">
+				<h6 id='prods2'>{{product.price|currency}}</h6>
+				
+			</div>
 		</a>
 		
+		<div class='underlined'></div>
 	</div>
+	
 	</div>
 </div>
+
+<footer-temp></footer-temp>

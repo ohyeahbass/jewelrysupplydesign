@@ -10,24 +10,27 @@ adminApp.controller('userCtrl', function(userService, $scope, $location){
 		userService.loginSubmit(user).then(function(res){
 		userService.getUserName().then(function(res){
 				if(res){
-					$scope.customerName=res.data.name;
+					$scope.customerName='Welcome, ' + res.data.name;
+					$scope.loginOut=!$scope.loginOut;
+					$('#loginModal').closeModal();
 					$(document).ready(function() {
- 						Materialize.toast('Successful Login', 4000, 'toasts')
+ 						Materialize.toast('Welcome, '+ res.data.name, 4000, 'toasts')
 					});
 				}
-				// else if(401){
-				// 	$(document).ready(function() {
- 				// 		Materialize.toast('Login or password incorrect', 4000, 'toasts')
-				// 	});
-				// }
-					
 			});
 			
-		});
+		},function(err){
+				console.log(err)
+				if(err.status>300){
+					$(document).ready(function() {
+ 						Materialize.toast('Login or password incorrect', 4000, 'toasts')
+					});
+				}
+			});
 		
 	}
-	userService.getUserName().then(function(res){
-				$scope.customerName=res.data.name;	
-	});
+	// userService.getUserName().then(function(res){
+	// 			$scope.customerName=res.data.name;	
+	// });
 	
 })

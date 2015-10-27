@@ -10,7 +10,9 @@ adminApp.service('cartService',function(){
 		return arr;
 	}()
 	this.addToCart = function(item) {
-
+		$(document).ready(function() {
+ 						Materialize.toast('added to cart', 4000, 'toasts')
+					});
     	var checkItem = false;
     	var items = {
      	   qty: 1,
@@ -31,6 +33,7 @@ adminApp.service('cartService',function(){
     	if(checkItem === false) {
         	arr.push(items);
     	}
+		
     	localStorage.setItem('text', JSON.stringify(arr));
     	return arr;
 	}

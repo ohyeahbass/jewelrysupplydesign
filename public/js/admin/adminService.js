@@ -69,12 +69,19 @@ adminApp.service('adminService',['$http', '$q', function($http, $q){
 			return res.data
 		})
 	}
+	this.deleteGetOrder=function(id){
+		return $http({
+			method:"DELETE",
+			url:'http://localhost:3000/order/'+id
+			
+		})
+	}
 	this.getFulfillOrder=function(){
 		return $http({
 			method:'GET',
 			url:'fulfill'
 		}).then(function(res){
-			console.log(res.data)
+			
 			return res.data
 			
 		})

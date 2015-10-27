@@ -1,5 +1,5 @@
 var adminApp=angular.module('adminApp');
-adminApp.service('userService', function($http){
+adminApp.service('userService', function($http,$q){
 	
 	this.newUserService=function(user){
 		
@@ -18,20 +18,22 @@ adminApp.service('userService', function($http){
 			method:"POST",
 			url:'http://localhost:3000/login',
 			data:user
-		}).then(function(err,res){
-			
-			if(err){return err;}
-			else{return res.data;}
+		}).then(function(res,err){
+			return res;
 		})
 	}
 	this.getUserName=function(){
-		return $http({
+		var deferred=$q.defer()
+		$http({
 			method:"GET",
 			url:'http://localhost:3000/user'
-		}).then(function(err,res){
-			
-			if(err){console.log(err);return err;}
-			else{return res.data;}
-		})
-	}
+		}).then(function(res){
+			var userName=res;
+			deferred.resolve(userName)
+		},function(err){
+			deferred.reject(err)
+		})			
+		return deferred.promise	
+		}
+	
 })

@@ -1,24 +1,12 @@
-.brand-name{
-	width:25%;
-	height:25%;
-	/*padding-left:40%;*/
-	flex-grow: none 
-	
-}.navbar{
-	
-	
-	
-}
+
 .inline{
 	display:inline;
 }
 .home-img{
       width:100%;
-	  margin-top:-15px;
+	  margin-top:-195px;
 }
 body{
-	background-image:url('http://www.buckheadpetpals.com/wp-content/uploads/2014/01/pale_tan.jpg');
-	font-family: 'Special Elite', cursive;
 	color: #948274;
 	
 }
@@ -28,26 +16,43 @@ body{
 }
 #top-bar{
 	background-color:#81cfcb;
-	padding:10px 0px 10px 0px;
+	padding:10px 0px -10px 0px;
 	position: fixed;
+	height:60px;
 	width:100%;	
+	display:flex;
+	flex-direction:row;
+	align-items: center;
+	justify-content: space-between;
+}
+.top-bar-logo{
+	height:90%;
+	width:90%;
+	margin-left:3%;
 }
 #top-cart-font{
 	color:#48331d;
-	float:right;
-	padding-right:15%;
+	padding-right:20%;
 }
 #nav-search input {
 	width:80%;
 	margin-bottom:30px;
 }
+
+.navbar-logo{
+	width: 115px;
+    margin-bottom: -15px;
+	margin-left: -20%;
+
+}
 .border-right{
-	border-right:  3px solid #48331d;
-	padding-right:50%;
+	border-bottom:  3px solid #48331d;
+
 }
 #mission-statement1{
 	vertical-align: middle;
 	font-size:200%;
+	padding-left:15%;
 }
 #mission-statement2{
 	font-size:200%;
@@ -55,60 +60,65 @@ body{
 .flexed{
 	display:flex;
 	align-items:center;
-	padding-left:8%;
-	padding-top:5%;
+	justify-content: center;
+	padding-top:70px;
+	padding-left:15%;
+}
+.brand-name{
+	width:220px;
+	height:220px;
+
+	padding-left:-10px;
+}
+.brand-logo-center{
+	width:20%;
 }
 mission-statement1{
-	/*flex-grow:1;*/
+	flex-grow:1;
 }
 mission-statement2{
-	/*flex-grow:1;*/
+	flex-grow:1;
 }
 .underlined{
-	width:95%;
+	margin-left:25%;
+	width:50%;
 	margin-top:15px;
-	margin-left:2.5%;
+	
 	border-bottom:3px solid #48331d;
 	margin-bottom:10px;
 	
 
 }
+#prod-im-2{
+	width:100%;
+	margin-top:-64px;
+}
 a{
 	color:#948274;
+}
+.reg-log-button{
+	display:flex;
+	flex-direction: row;
+	justify-content:  space-between;
 }
 .toast{
 	background-color:#61b1a9;
 	color:#48331d;
 }
 .product-wrap {
-	display: flex;
-	flex-direction: row;
-	flex-wrap:wrap;
-	justify-content:space-around;
-	
+	padding-top:40px;
 	
 }
 .product-in-products{
 	color:#48331d;
 	background-color:white;
-	width:33%;	
+	text-align: center;
+
 }
-.prods-img{
-	width:100%;
-}
-.prods-info{
-	display:flex;
-	flex-wrap:wrap;
-}
-.prods-price{
-	padding-left:20%;
-}
-.prods{
-	color: #48331d;
-}
-.product-page-main-img{
-	width:90%;
-	length:410px;
+
+
+#product-page-main-img{
+	width:60%;
 	padding-left:5%;
 }
 .product-page-img{
@@ -120,14 +130,84 @@ a{
 .flexbox{
 	display:flex;
 	flex-direction:row;
+	
 }
 h4{
 	color:#48331d;
 }
-.nav-wrapper{
+#nav-wrapper{
+	background-color:#61b1a9;
+	color:#48331d;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-top:-50%;	
+}
+#nav-wrap{
+	color:white;
+	display: float;
+	/*padding-top:-50%;*/
+	/*background-color:  none;*/
+}
+.threes-navbar1{
+	
+	align-self: center;
+	margin-top:-10px;
+	display: flex;
+	flex-direction: row;
+	
+}
+#threes-navbar1{
+	float:left;	
+	align-self: center;
+	margin-top:-10px;
+	display: flex;
+	flex-direction: row;
+	
+}
+#n{
+	position: fixed;
+}
+
+.threes-navbar2{
+	
+	display: flex;
+	flex-direction: row;
+	
+	align-self: center;
+	
+	margin-bottom:-2%
+}
+#threes-navbar2{
+	float:center;
+	display: flex;
+	flex-direction: row;
+	
+	align-self: center;
+	/*padding-left:25%;*/
+	margin-bottom:-2%
+}
+.threes-navbar3{
+	
+	align-self: center;
 	display:flex;
-	flex-direction:  row;
-	justify-content:space-around;
+	flex-direction:row;
+	align-content:  center
+}
+#threes-navbar3{
+	float:right;
+	align-self: center;
+	display:flex;
+	flex-direction:row;
+	align-content:  center
+}
+.name-price{
+	display:flex;
+	flex-direction:row;
+	justify-content: space-between
+}
+#price-in-name-price{
+	padding-right:10px;	
 }
 
 .about-container{
@@ -179,4 +259,88 @@ iframe{
 button{
 	background-color:#81cfcb;
 	color:#48331d;
+	border-color: #948274;
 }
+.checkout-prod-img1{
+	width:10%;
+	height:10%;
+
+	
+}
+.checkout-container{
+	height:100%;
+}
+
+
+
+.checkout-prod{
+	display:flex;
+	flex-direction: row;
+	justify-content:  space-around;	
+}
+.ahhhh{
+	margin-left:-500px;
+	display:flex;
+	flex-direction: row;
+}
+.subtotal{
+	display:float;
+	float:right;
+	padding-right:5%;
+}
+.checkout-all-prods{
+	margin-top:10%;
+}
+.tax{
+	display:float;
+	float:right;
+	padding-right:5%;
+}
+.total{
+	display:float;
+	float:right;
+	padding-right:5%;
+}
+.navbar{
+	align-content: center;
+	
+	
+
+}
+product-page-info2{
+
+	padding-top:25%;
+}
+
+
+
+footer.page-footer{
+	background-color:#81cfcb; 
+}
+
+
+body{
+	font-family: 'Special Elite', cursive;
+}
+
+nav {
+	background-color:transparent;
+}
+
+#nav-wrapper-prod{
+	background-color:transparent;
+	color:#48331d;
+	display: flex;
+	flex-direction: row;
+	justify-content:  space-between;
+	padding-top:-50%;	
+}
+#loginModal{
+	padding-right:15%;
+}
+
+
+
+
+
+

@@ -4,7 +4,10 @@ var schema = new Mongoose.Schema({
 		 {
 			name: {type: String},
 			qty: {type: Number},
-			price: {type: Number}
+			price: {type: Number},
+			font: {type:String},
+			additionalstamp:{type:String},
+			custom:{type:String}
 		}
 	],
 	

@@ -4,12 +4,9 @@ adminApp.directive('adminOrderDir', function(){
 		templateUrl:'js/admin/adminOrderTemplate.html',
 		controller:function($scope, adminService){
 			$scope.fulfillOrder=function(ord){
-			adminService.fulfillOrder(ord)
-			}
-			
-			$scope.getFulfillOrder=function(){
-				adminService.getFulfillOrder().then(function(res){
-					$scope.fullfilled=res.data
+				adminService.fulfillOrder(ord).then(function(res){
+					console.log(res._id)
+					adminService.deleteGetOrder(res._id)
 				})
 			}
 			

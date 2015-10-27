@@ -5,7 +5,7 @@ adminApp.factory('productService', function($http, $q){
 		item=product;		
 		},
 			 getter: function(){
-				 console.log(item)
+				 
 		return item;
 		
 		}

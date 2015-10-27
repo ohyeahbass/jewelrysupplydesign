@@ -6,6 +6,7 @@
 				<th data-field='shortDesc'>short description</th>
 				<th data-field='longDesc'>long description</th>
 				<th data-field='qty'>qty</th>
+				<th data-field='custom'>custom</th>
 				<th data-field='price'>price</th>
 				<th data-field='img1'>img1</th>
 				<th data-field='img2'>img2</th>
@@ -47,6 +48,12 @@
 					<div ng-show='mustShow'placeholder='edit'>
 						<input type="text" ng-model='qty'>
 						<button ng-click="productEdit(product._id,{qty:qty})">submit</button>
+					</div>
+				</td>
+				<td>{{product.custom}}
+					<div ng-show='mustShow'placeholder='edit'>
+						<input type="text" ng-model='custom'>
+						<button ng-click="productEdit(product._id,{custom:custom})">submit</button>
 					</div>
 				</td>
 				<td>{{product.price}}

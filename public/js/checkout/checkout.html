@@ -1,37 +1,67 @@
+<div class= 'nav-template'>
+	<nav-template></nav-template>
+</div>
 <div class='checkout containter'>
+	<div class='container'>
 	<div class='whole-product' ng-repeat='prod in prodInfo track by $index'>
-		<div class = 'prod'>
-			<img class='prod-img1'src='{{prod.img1}}'></img>
-		</div>
-		<div class='prod'>
-			<ul>
-				<li class='inline'>name: {{prod.name}}</li>
-				<li class='inline'>price: {{prod.price}}</li>
-				<li class='inline'>qty: {{prod.qty}}</li>
-			</ul>
+		<div class = 'checkout-prod'>
+			<img class='checkout-prod-img1'src='{{prod.img1}}'></img>
+			<p class='cop'>name: {{prod.name}}</p>
+			<div>
+				<p> qty {{prod.qty}}</p>
+				<button ng-click='plus($index)'>+</button>
+				<button ng-click='minus($index)'>-</button>
 			
-		</div>	
-	</div>
-	<div class = 'all-prods'>
-		<div class = 'subtotal'>
-			subtotal: ${{subTotal}}
+			<p class='cop'>price: {{prod.price}}</p>
+		</div>		
 		</div>
-		<form>
-			ups overnight:$10<input name='shipping'type="radio" ng-click="shipping(1)">
-			ups standard:free<input name='shipping'type="radio" ng-click="shipping(2)">
-			USPS:free<input  name='shipping' type="radio" ng-click="shipping(3)" checked>
-			fedex standard:free<input  name='shipping'type="radio" ng-click="shipping(4)">
-			fedex overnight:$10<input name='shipping' type="radio"ng-click="shipping(5)">
-		</form>
+	</div>
+	<div class = 'checkout-all-prods'>
+		<div class = 'subtotal'>
+			subtotal: {{subTotal|currency}}
+		</div>
+		<a class='dropdown-button btn' data-activates='shippingDropdown' dropdown data-hover="true">
+    		shipping options
+		</a>
+		<ul id='shippingDropdown' class='dropdown-content'>
+    		<li><a ng-click='shipping(1)'>fedex standard free</a></li>
+    		<li><a ng-click="shipping(2)">fedex express $10</a></li>
+    		<li><a ng-click="shipping(3)">USPS free</a></li>
+    		<li><a ng-click="shipping(4)">UPS standard free</a></li>
+    		<li><a ng-click="shipping(5)">UPS express $10</a></li>
+		</ul>
 		<div class = 'tax'>
-			tax:
+			tax:{{tax|currency}}
 		</div>
 		<div class ='total'>
-			total: ${{total}}
+			total: {{total |currency}}
 		</div>
-		<button ng-click="payNow(prodInfo)">purchase</button>
+		<!-- Modal Trigger -->
+<div class="col">
+    <a class='btn' href='#checkoutModal' modal>checkout</a>
+</div>
+<!-- Modal Structure -->
+<div id="checkoutModal" class="modal">
+    <div class="modal-content">
+        <input type="text" placeholder="first name">
+		<input type="text" placeholder='last name'>
+		<input type="text" placeholder='email'>
+		<input type="text" placeholder='address'>
+		<input type="text" placeholder="apt/suite">
+		<input type="text" placeholder='state'>
+		<input type="text" placeholder = 'zip'>
+		<input type="text" placeholder='credit card'>
+		<input type="text" placeholder="cardtype">
+		<input type="text" placeholder="ccv">
+		<input type="text" placeholder='exp'>
+    </div>
+    <div class="modal-footer">
+        <button ng-click="payNow(prodInfo)">pay now</button>
+    </div>
+</div>
+	</div>
 	</div>
 </div>
-
+<footer-temp></footer-temp>
 
 

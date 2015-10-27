@@ -17,34 +17,42 @@ adminApp.controller('checkoutCtrl', function($scope, checkoutSrvc, $location){
 	$scope.total=$scope.subTotal;
 	$scope.shipping=function(option){
 		console.log(option)
-		if(1===option){
-			
+		if(2===option||5===option){
 			$scope.total=$scope.subTotal+10 
 		}
-		else if(2===option){
+		else{
 			$scope.total=$scope.subTotal 
 		}
-		else if(3===option){
-			$scope.total=$scope.subTotal 
-		}
-		else if(4===option){
-			$scope.total=$scope.subTotal 
-		}
-		else if(5===option){
-			$scope.total=$scope.subTotal +10
-		}
-		else{$scope.total=$scope.subTotal}
 		return $scope.total
 	}
 	
 	$scope.payNow=function(prodInfo){
 		var buy=confirm('Ok to confirm purchase')
 		if(buy){
-		checkoutSrvc.checkOut(prodInfo)
-		alert('thanks for purchase!')
-		localStorage.clear('text')
-		$location.path('/')
+		checkoutSrvc.checkOut(prodInfo).then(function(res){
+			alert('thanks for purchase!')
+			$('#checkoutModal').closeModal();
+			localStorage.clear('text')
+			$location.path('/')	
+		})
+		
 		}
+	}
+	$scope.plus=function(i){
+			
+			$scope.prodInfo[i].qty++;
+			localStorage.setItem('text', JSON.stringify($scope.prodInfo));
+			$scope.subTotal+=$scope.prodInfo[i].price;
+			$scope.total=$scope.subTotal;
+			
+		
 	}	
+	$scope.minus=function(i){
+		
+		$scope.prodInfo[i].qty--;
+		localStorage.setItem('text', JSON.stringify($scope.prodInfo));
+		$scope.subTotal-=$scope.prodInfo[i].price;
+		$scope.total=$scope.subTotal;
+	}
 		
 });

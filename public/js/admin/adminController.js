@@ -22,7 +22,12 @@ adminApp.controller('adminController', function($scope, adminService){
 			}
 		) 
 	}
-	
+	$scope.getFulfillOrder=function(){
+				adminService.getFulfillOrder().then(function(res){
+					$scope.fulfilled=res
+					console.log(res)
+				})
+			}
 	
 	
 });

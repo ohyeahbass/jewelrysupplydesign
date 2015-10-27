@@ -13,14 +13,19 @@ module.exports = {
 				var qty = products[i].qty
 				console.log(1111111, qty)
 				Product.findById(products[i]._id, function(err, product) {
-					console.log(232323, qty)
-					product.qty -= qty;
-					product.save()
-					productsUpdated += 1
+					if(err){console.log(err); res.status(500).send(err)}
+					else{
+						console.log(232323, qty)
+						product.qty -= qty;
+						product.save()
+						productsUpdated += 1
+						if (productsUpdated === products.length) {
+							res.json(result);
+						}
+					}
 				})
-				if (productsUpdated === products.length) {
-					res.json(result);
-				}
+				
+				
 			}
 		})
 	},

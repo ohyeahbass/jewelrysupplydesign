@@ -1,4 +1,4 @@
-var adminApp=angular.module('adminApp', ['ngRoute']);
+var adminApp=angular.module('adminApp', ['ngRoute', 'ui.materialize']);
 adminApp.config(function($routeProvider){
 	$routeProvider
 		.when('/',{
@@ -26,10 +26,12 @@ adminApp.config(function($routeProvider){
 					return productsService.getProducts().then(function(res) {
 						return res;
 					});
+					
 				},
 				getLocalItems: function() {
 					return JSON.parse(localStorage.getItem('text'));
 				}
+				
 			}
 		})
 		.when('/about',{

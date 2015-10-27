@@ -1,0 +1,88 @@
+<div ng-controller='userCtrl'>
+    
+    
+    <nav >
+        <div class="z-depth-1">
+        <div>
+            
+            <ul class="nav-wrapper"id='nav-wrapper'>
+                
+                <div class ='threes-navbar1'>
+                
+                <li class='navbar' ><a href='#/productsList'>products</a></li>
+                <li class='navbar'><a href='#/about'>about</a></li>
+                <li class= 'navbar'><a href='#/contact'>contact</a></li>
+                <!--<li id='nav-search' class= 'navbar' ><a class='border-right' href='#demoModal' modal>search</a>
+                    <div id="demoModal" class="modal">
+                        <div class="modal-content" >
+                        <input type="text"placeholder='search' ng-model='searchWord'>
+                        <button ng-click='search(searchWord)'  class=" modal-action modal-close">submit</button>
+                        </div>
+                    </div>
+                </li>-->
+                
+                    </div>
+                    <div class ='threes-navbar2'>
+                        <a href="#!" ><img class="navbar-logo" src="img/logo.gif" alt=""></a>
+                    </div>
+                    <div class ='threes-navbar3'>
+                    <div >
+                        <a href='#loginModal' modal><p ng-hide='loginOut'>login/reg</p></a>
+                    </div>
+<!-- Modal Structure -->
+                        <div id="loginModal" class="modal">
+                            <div class="modal-content">
+                                <div ng-show = '!customerName' class='inline'>
+
+                                                    
+                                                    <!--<button ng-click='showLog=!showLog'>hide</button>-->
+                                                    <div ng-hide = 'reglog'>
+                                                        <div class='reg-log-button'>
+                                                            register
+                                                            <button ng-click='reglog=!reglog'>login</button>
+                                                        </div>
+                                                        <div class='row'>
+                                                            <input class='register col s12'type="text" ng-model='user.email' placeholder='email'>
+                                                            <input class='register col s12 m6'type="text" ng-model='user.name' placeholder='name'>
+                                                            <input class='register col s12 m6'type="password" ng-model='user.password' placeholder='password'>
+                                                            <input class='register col s12 'type="text" ng-model='user.address' placeholder='address'>
+                                                            <input class='register col s12 m6'type="text" ng-model='user.city' placeholder='city'>
+                                                            <input class='register col s12 m2'type="text" ng-model='user.state' placeholder='state'>
+                                                            <input class='register col s12 m4'type="text" ng-model='user.zip' placeholder='zip'>
+                                                        </div>
+                                                        <button onclick="Materialize.toast('Thanks for Signing In!', 4000)" ng-click='submitNewUser(user)'>submit</button>
+                                                    </div> 
+                                                    <div ng-show='reglog'>
+                                                        <div class='reg-log-button'>
+                                                            login
+                                                            <button ng-click='reglog=!reglog'>register</button>
+                                                        </div>
+                                                        <input type="text" ng-model='user.email' placeholder="email"> 
+                                                        <input type="password" ng-model='user.password' placeholder="password"> 
+                                                        <button onclick="Materialize.toast()" ng-click='loginSubmit(user)'>submit</button>
+                                                    </div> 
+                                            </div>
+                            </div>
+                            
+                        </div>
+                    
+                    
+                    
+                    <div ng-show='loginOut'>
+                        <a href='/logout' onclick = 'Materialize.toast("Logged Out")'>logout</a>
+                    </div>
+                    
+                        <div ng-controller='ShoppingCartCtrl'>
+                            <a href='#/checkout'>cart  {{cartCount}}</a>
+                        </div>
+
+                 </div>   
+          </ul>
+
+       </div>
+       
+
+       </div>
+    
+</nav>
+</div>

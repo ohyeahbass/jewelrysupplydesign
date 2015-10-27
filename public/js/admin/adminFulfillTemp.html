@@ -1,0 +1,23 @@
+<div ng-repeat='fulfill in fulfilled'>
+	<div class='admin-order-divider'></div>	
+	<div ng-repeat='ful in fulfill.order'>
+		<table>
+			<thead>
+				<tr>
+					<th>name</th>
+					<th>price</th>
+					<th>qty</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>{{ful.name}}</th>
+					<th>{{ful.price}}</th>
+					<th>{{ful.qty}}</th>
+					<th></th>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
