@@ -1,4 +1,4 @@
 module.exports = {
-	id:'661907220615530',
-	secret:'7895c4c95871b34259474920df3b879f'
+	id:process.env.SESSION_SECRET,
+	secret:process.env.SESSION_SECRET
 }

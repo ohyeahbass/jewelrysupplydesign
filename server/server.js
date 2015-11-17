@@ -57,8 +57,8 @@ app.delete('/order/:id', OrderCtrl.delete);
 app.post('/fulfill', FulfillCtrl.create)
 app.get('/fulfill', FulfillCtrl.read);
 
-var port = 3000;
-var mongoURI = 'mongodb://client:blah@ds055584.mongolab.com:55584/darciedb';
+var port = process.env.PORT || 3000;
+var mongoURI = process.env.MONGOLABURI;
 
 mongoose.connect(mongoURI);
 mongoose.set('debug,true');
