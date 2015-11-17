@@ -5,6 +5,7 @@ adminApp.controller('userCtrl', function(userService, $scope, $location){
 	$scope.submitNewUser=function(user){
 		userService.newUserService(user);
 	}
+	
 	$scope.loginSubmit=function(user){
 		// var path = $location.path();
 		userService.loginSubmit(user).then(function(res){

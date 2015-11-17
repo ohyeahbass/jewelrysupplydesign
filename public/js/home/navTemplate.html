@@ -1,37 +1,50 @@
 <div ng-controller='userCtrl'>
     
     
-    <nav >
-        <div class="z-depth-1">
-        <div>
-            
-            <ul class="nav-wrapper"id='nav-wrapper'>
-                
-                <div class ='threes-navbar1'>
-                
-                <li class='navbar' ><a href='#/productsList'>products</a></li>
-                <li class='navbar'><a href='#/about'>about</a></li>
-                <li class= 'navbar'><a href='#/contact'>contact</a></li>
-                <!--<li id='nav-search' class= 'navbar' ><a class='border-right' href='#demoModal' modal>search</a>
-                    <div id="demoModal" class="modal">
-                        <div class="modal-content" >
-                        <input type="text"placeholder='search' ng-model='searchWord'>
-                        <button ng-click='search(searchWord)'  class=" modal-action modal-close">submit</button>
-                        </div>
-                    </div>
-                </li>-->
-                
-                    </div>
-                    <div class ='threes-navbar2'>
-                        <a href="#!" ><img class="navbar-logo" src="img/logo.gif" alt=""></a>
-                    </div>
-                    <div class ='threes-navbar3'>
-                    <div >
-                        <a href='#loginModal' modal><p ng-hide='loginOut'>login/reg</p></a>
-                    </div>
-<!-- Modal Structure -->
-                        <div id="loginModal" class="modal">
-                            <div class="modal-content">
+
+        <nav class="top-nav #404040 z-depth-0">
+            <div class ='row'>                     
+                {{customerName}}
+                <div class='top-nav-items col s1 offset-s8'>
+                    <a href='#loginModal' modal><p class='top-nav-items'ng-hide='loginOut'>login</p></a>
+                </div>
+                <div class='top-nav-items col s1'>
+                    <a href='#registerModal' modal><p class='top-nav-items' ng-hide='loginOut'>register</p></a>
+                </div>
+                <div class='top-nav-items col s1'>
+                    <a href='/logout' onclick = 'Materialize.toast("Logged Out")'><p class='top-nav-items'>logout</p></a>
+                </div>
+                <div class='top-nav-items col s1' ng-controller='ShoppingCartCtrl'>
+                    <a href='#/checkout'><p class='top-nav-items'>cart  {{cartCount}}</p></a>
+                </div>
+            </div>
+        </nav>   
+        <nav id='second-nav-all-pages'class = 'row N/A transparent z-depth-0'>
+            <div class='col s5'>
+                <ul class ='threes-navbar1'>
+                    <li class='navbar'><a class='bottom-nav-items-left' href='#/about'>about</a></li>
+                        <li class='navbar' ><a class='bottom-nav-items-left' href='#/productsList' id='last-item-nav-list-left'>products</a></li>
+
+                </ul>
+            </div>
+            <div class='col s2'>
+                <div class ='threes-navbar2 center-align'>
+                    <a href="#!" ><img class="navbar-logo" src="img/jdslogo.jpg" alt=""></a>
+                </div>
+            </div>
+            <div class='col s5'>
+                <ul class ='threes-navbar3'>
+                        <li class='navbar' ><a class='bottom-nav-items-right' href='#/tutorials'>tutorials</a></li>
+                    <li class= 'navbar'><a class='bottom-nav-items-right' href='#/contact' id='last-item-nav-list-right'>contact</a></li>
+                </ul>
+            </div>
+               
+        </nav>
+                  
+
+              
+                               <div id="loginModal" class="modal">
+                                <div class="modal-content">
                                 <div ng-show = '!customerName' class='inline'>
 
                                                     
@@ -65,24 +78,7 @@
                             </div>
                             
                         </div>
-                    
-                    
-                    
-                    <div ng-show='loginOut'>
-                        <a href='/logout' onclick = 'Materialize.toast("Logged Out")'>logout</a>
-                    </div>
-                    
-                        <div ng-controller='ShoppingCartCtrl'>
-                            <a href='#/checkout'>cart  {{cartCount}}</a>
-                        </div>
-
-                 </div>   
-          </ul>
-
-       </div>
-       
-
-       </div>
+             
     
 </nav>
 </div>

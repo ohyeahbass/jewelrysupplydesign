@@ -9,25 +9,17 @@
                 
                 <div class ='threes-navbar1'>
                 
-                <li class='navbar' ><a href='#/productsList'>products</a></li>
-                <li class='navbar'><a href='#/about'>about</a></li>
-                <li class= 'navbar'><a href='#/contact'>contact</a></li>
-                <!--<li id='nav-search' class= 'navbar' ><a class='border-right' href='#demoModal' modal>search</a>
-                    <div id="demoModal" class="modal">
-                        <div class="modal-content" >
-                        <input type="text"placeholder='search' ng-model='searchWord'>
-                        <button ng-click='search(searchWord)'  class=" modal-action modal-close">submit</button>
-                        </div>
-                    </div>
-                </li>-->
+                <li class='navbar' ><a href='#/productsList'><p class='white1'>products</p></a></li>
+                <li class='navbar'><a href='#/about'><p class='white1'>about</p></a></li>
+                <li class= 'navbar'><a href='#/contact'><p class='white1'>contact</p></a></li>
                 
                     </div>
                     <div class ='threes-navbar2'>
-                        <a href="#!" ><img class="navbar-logo" src="img/logo.gif" alt=""></a>
+                        <a href="#!" ><img class="ribbon-logo" src="img/ribbonlogo.png" alt=""></a>
                     </div>
                     <div class ='threes-navbar3'>
                     <div >
-                        <a href='#loginModal' modal><p ng-hide='loginOut'>login/reg</p></a>
+                        <a href='#loginModal' modal><p class = 'white1'ng-hide='loginOut'>login/reg</p></a>
                     </div>
 <!-- Modal Structure -->
                         <div id="loginModal" class="modal">
@@ -38,8 +30,8 @@
                                                     <!--<button ng-click='showLog=!showLog'>hide</button>-->
                                                     <div ng-hide = 'reglog'>
                                                         <div class='reg-log-button'>
-                                                            register
-                                                            <button ng-click='reglog=!reglog'>login</button>
+                                                           <p class='white1'> register<p>
+                                                            <button ng-click='reglog=!reglog'><p class='white'>login</p></button>
                                                         </div>
                                                         <div class='row'>
                                                             <input class='register col s12'type="text" ng-model='user.email' placeholder='email'>
@@ -71,12 +63,12 @@
                     <div ng-show='loginOut'>
                         <a href='/logout' onclick = 'Materialize.toast("Logged Out")'>logout</a>
                     </div>
-                    
+                     
                         <div ng-controller='ShoppingCartCtrl'>
-                            <a href='#/checkout'>cart {{cartCount}}</a>
+                            <a href='#/checkout'><p class='white1'>cart {{cartCount}}</p></a>
                         </div>
-
-                 </div>   
+                        </div> 
+                  
           </ul>
 
        </div>

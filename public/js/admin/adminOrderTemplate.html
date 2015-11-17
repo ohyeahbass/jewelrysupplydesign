@@ -1,7 +1,7 @@
 
 <div ng-repeat='order in orders'>
 	<div class='admin-order-divider'></div>	
-	<button ng-click='fulfillOrder(order.products)'>check fulfilled</button>
+	<button ng-click='fulfillOrder(order)'>check fulfilled</button>
 	<div ng-repeat='item in order.products'>
 		<table>
 			<thead>
@@ -10,6 +10,8 @@
 					<th>qty</th>
 					<th>price</th>
 					<th>custom</th>
+
+					
 				</tr>
 			</thead>
 			<tbody>
@@ -18,8 +20,25 @@
 					<td>{{item.qty}}</td>
 					<td>{{item.price}}</td>
 					<td>{{item.custom}}</td>
+
 				</tr>
 			</tbody>
 		</table>
 	</div>	
+	<table>
+		<thead>
+			<tr>
+					<td>{{order.customer.name}}</td>
+					<td>{{order.customer.email}}</td>
+					<td>{{order.customer._id}}</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+					<th>customer name</th>
+					<th>email</th>
+					<th>id</th>
+			</tr>
+		</tbody>
+	</table>
 </div>	

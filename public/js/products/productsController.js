@@ -10,5 +10,8 @@ adminApp.controller('productsController', function($scope, productsService, prod
          productService.setter(product)
          $location.path('/productPage')
     }
-    
+    $scope.filter=function(key){
+        console.log('setting key: ', key);
+        $scope.key=key
+    }
 })

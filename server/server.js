@@ -51,14 +51,14 @@ app.delete('/products/:id', ProductCtrl.delete);
 app.post('/order', OrderCtrl.create);
 app.get('/order', OrderCtrl.read);
 app.put('/order', OrderCtrl.update);
-app.delete('/order', OrderCtrl.delete);
+app.delete('/order/:id', OrderCtrl.delete);
 
 
 app.post('/fulfill', FulfillCtrl.create)
 app.get('/fulfill', FulfillCtrl.read);
 
 var port = 3000;
-var mongoURI = 'mongodb://localhost:27017/dataBase';
+var mongoURI = 'mongodb://client:blah@ds055584.mongolab.com:55584/darciedb';
 
 mongoose.connect(mongoURI);
 mongoose.set('debug,true');

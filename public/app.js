@@ -44,6 +44,9 @@ adminApp.config(function($routeProvider){
 			templateUrl:"js/checkout/checkout.html",
 			controller:'checkoutCtrl'
 		})
+		.when('/tutorials',{
+			templateUrl:'js/tutorials/tutorials.html'	
+		})
 		.when('/productPage',{
 			templateUrl:'js/products/productPage.html',
 			controller:'productController',

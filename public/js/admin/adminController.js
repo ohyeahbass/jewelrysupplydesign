@@ -15,10 +15,12 @@ adminApp.controller('adminController', function($scope, adminService){
 	
 		
 	$scope.deleteProduct=function(){}
+	
 	$scope.getOrders=function(){
 		adminService.getOrder().then(
 			function(res){
-					$scope.orders=res.data		
+					$scope.orders=res.data	
+					
 			}
 		) 
 	}

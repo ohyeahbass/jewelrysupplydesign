@@ -1,5 +1,5 @@
 var adminApp=angular.module('adminApp');
-adminApp.controller('checkoutCtrl', function($scope, checkoutSrvc, $location){
+adminApp.controller('checkoutCtrl', function($scope, checkoutSrvc, userService, $location){
 	function getProdInfo(){
 	$scope.prodInfo=JSON.parse(localStorage.getItem('text'))
 	}
@@ -30,10 +30,10 @@ adminApp.controller('checkoutCtrl', function($scope, checkoutSrvc, $location){
 		var buy=confirm('Ok to confirm purchase')
 		if(buy){
 		checkoutSrvc.checkOut(prodInfo).then(function(res){
-			alert('thanks for purchase!')
+			alert('thanks for purchase!');
 			$('#checkoutModal').closeModal();
-			localStorage.clear('text')
-			$location.path('/')	
+			localStorage.clear('text');
+			$location.path('/');	
 		})
 		
 		}
@@ -54,5 +54,11 @@ adminApp.controller('checkoutCtrl', function($scope, checkoutSrvc, $location){
 		$scope.subTotal-=$scope.prodInfo[i].price;
 		$scope.total=$scope.subTotal;
 	}
-		
+	
+	
+	userService.getUserName().then(function(res){
+		console.log(res,"user")
+		$scope.checkOutInfo=res.data;
+	})
+	
 });

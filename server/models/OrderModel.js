@@ -8,8 +8,10 @@ var schema = new Mongoose.Schema({
 			font: {type:String},
 			additionalstamp:{type:String},
 			custom:{type:String}
+			
 		}
 	],
+	customer:{type: Mongoose.Schema.Types.ObjectId, ref:'User'}
 	
 })
 module.exports = Mongoose.model('order', schema)

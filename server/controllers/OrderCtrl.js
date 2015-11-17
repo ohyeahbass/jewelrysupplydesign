@@ -3,7 +3,13 @@ var Product = require('../models/ProductModel')
 module.exports = {
 	create:function(req,res){
 		console.log('BODY', req.body)
-		Order.create({products: req.body}, function(err,result){
+		var newOrder={
+			products:req.body,
+			customer:req.user._id
+			
+		}
+		console.log(req.user._id)
+		Order.create(newOrder, function(err,result){
 			if(err){res.status(500).send(err)}
 			// else{res.json(result);}
 			var products = req.body
@@ -30,7 +36,7 @@ module.exports = {
 		})
 	},
 	read:function(req,res){
-		Order.find().exec(function(err,result){
+		Order.find().populate('customer').exec(function(err,result){
 			if(err){res.send(err)}
 			else{res.json(result)}
 		})
@@ -42,6 +48,7 @@ module.exports = {
 		})
 	},
 	delete:function(req,res){
+		console.log('delete')
 		Order.findByIdAndRemove(req.params.id, function(err,result){
 			if(err){res.send(err)}
 			else{res.json(result)}

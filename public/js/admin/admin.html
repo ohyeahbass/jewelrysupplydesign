@@ -5,9 +5,9 @@
 <div class= 'admin-page-container'>
 
 	<div ng-controller='adminController'>
-		<button ng-click='newProd=!newProd'>hide adding products</button>
+		<button ng-click='newProd=!newProd' id='add-prod'>hide adding products</button>
 		<div ng-hide='newProd'>
-		<div class ='row'>
+		<div class ='row' >
 			<input class='col s2'type="text"placeholder="name" ng-model='product.name'/>
 			<input class='col s2' type="text"placeholder="types" ng-model='product.types'/>
 			<input class='col s2' type="text"	placeholder="short description" ng-model='product.shortDesc'/>

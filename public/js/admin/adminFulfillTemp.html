@@ -1,23 +1,42 @@
 <div ng-repeat='fulfill in fulfilled'>
 	<div class='admin-order-divider'></div>	
-	<div ng-repeat='ful in fulfill.order'>
+	<div ng-repeat='item in fulfill.order'>
 		<table>
 			<thead>
 				<tr>
 					<th>name</th>
-					<th>price</th>
 					<th>qty</th>
-					<th></th>
+					<th>price</th>
+					<th>custom</th>
+
+					
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<th>{{ful.name}}</th>
-					<th>{{ful.price}}</th>
-					<th>{{ful.qty}}</th>
-					<th></th>
+					<td>{{item.name}}</td>
+					<td>{{item.qty}}</td>
+					<td>{{item.price}}</td>
+					<td>{{item.custom}}</td>
+
 				</tr>
 			</tbody>
 		</table>
-	</div>
-</div>
+	</div>	
+	<table>
+		<thead>
+			<tr>
+					<td>{{order.customer.name}}</td>
+					<td>{{order.customer.email}}</td>
+					<td>{{order.customer._id}}</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+					<th>customer name</th>
+					<th>email</th>
+					<th>id</th>
+			</tr>
+		</tbody>
+	</table>
+</div>	
