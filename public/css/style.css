@@ -177,3 +177,11 @@
 	color:#FFC6D9;
 	background-color:#404040;
 }
+.sm-icon{
+	display:flex;
+	flex-direction: row;
+}
+.small-icon{
+	width:20px;
+	height:20px;
+}
