@@ -3,7 +3,7 @@ adminApp.controller('productsController', function($scope, productsService, prod
     $scope.products = [];
     
     $scope.products = getDBProducts.data;
-    
+    console.log($scope.products)
     $scope.addToCart=function(item){cartService.addToCart(item);}
     
     $scope.getDBProduct=function(product){
