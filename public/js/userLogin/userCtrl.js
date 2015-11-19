@@ -1,7 +1,7 @@
 var adminApp=angular.module('adminApp');
 adminApp.controller('userCtrl', function(userService, $scope, $location){
 	
-	
+	$scope.customerName='';
 	$scope.submitNewUser=function(user){
 		userService.newUserService(user);
 	}
