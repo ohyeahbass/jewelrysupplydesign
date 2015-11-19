@@ -6,10 +6,7 @@
             <div class ='row'>                     
                 {{customerName}}
                 <div class='top-nav-items col s1 offset-s8'>
-                    <a href='#loginModal' modal ng-if='user'><p class='top-nav-items'>login</p></a>
-                </div>
-                <div class='top-nav-items col s1'>
-                    <a href='#registerModal' modal ng-if='user'><p class='top-nav-items'>register</p></a>
+                    <a href='#loginModal' modal ng-if='user'><p class='top-nav-items'>login/register</p></a>
                 </div>
                 <div class='top-nav-items col s1'>
                     <a ng-if='!user'href='/logout' onclick = 'Materialize.toast("Logged Out")'><p class='top-nav-items'>logout</p></a>
@@ -18,6 +15,7 @@
                     <a href='#/checkout'><p class='top-nav-items'>cart  {{cartCount}}</p></a>
                 </div>
             </div>
+        </nav>   
                             <div id="loginModal" class="modal">
                                 <div class="modal-content">
                                 <div ng-show = '!customerName' class='inline'>
@@ -53,7 +51,7 @@
                             </div>
                             
                         </div>
-        </nav>   
+        
         <nav id='second-nav-all-pages'class = 'row N/A transparent z-depth-0'>
             <div class='col s5'>
                 <ul class ='threes-navbar1'>
