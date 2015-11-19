@@ -13,16 +13,17 @@
 	width:200px;
 }
 .threes-navbar1{
+	background-color: #404040;
 	display:flex;
 	flex-direction: row;
 	justify-content: space-around;
 }
 .bottom-nav-items-left{
-	color:#404040;
+	color:#FEC5D9;
 	
 }
 .bottom-nav-items-right{
-	color:#404040;
+	color:#FEC5D9;
 }
 
 .navbar{
@@ -38,7 +39,7 @@
 	margin-top:20px;
 }
 .threes-navbar2{
-	background-color: #404040;
+	
 	margin: auto;
     width: 60%;
     padding: 10px;
