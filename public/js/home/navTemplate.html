@@ -6,7 +6,7 @@
             <div class ='row'>                     
                 {{customerName}}
                 <div class='top-nav-items col s1 offset-s8'>
-                    <a href='#loginModal' modal><p class='top-nav-items'>login</p></a>
+                    <a href='#loginModal' modal ng-if='user'><p class='top-nav-items'>login</p></a>
                 </div>
                 <div class='top-nav-items col s1'>
                     <a href='#registerModal' modal ng-if='user'><p class='top-nav-items'>register</p></a>
@@ -83,7 +83,7 @@
                                 <div ng-show = '!customerName' class='inline'>
 
                                                     
-                                                    <!--<button ng-click='showLog=!showLog'>hide</button>-->
+                                                    <button ng-click='showLog=!showLog'>hide</button>
                                                     <div ng-hide = 'reglog'>
                                                         <div class='reg-log-button'>
                                                             register
