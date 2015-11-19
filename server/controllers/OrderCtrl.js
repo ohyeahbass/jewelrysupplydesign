@@ -10,7 +10,7 @@ module.exports = {
 		}
 		console.log(req.user._id)
 		Order.create(newOrder, function(err,result){
-			if(err){res.status(500).send(err'ahhhh')}
+			if(err){res.status(500).send(err); console.log('howdy')}
 			// else{res.json(result);}
 			var products = req.body
 			var productsUpdated = 0;
