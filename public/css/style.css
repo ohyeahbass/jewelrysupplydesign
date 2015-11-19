@@ -70,9 +70,8 @@
 }
 /*products list*/
 
-.products-contain{
-	width:95%;
-	padding-left:2.5%;
+.product-in-products{
+	height:300px;
 }
 .category{
 	padding-top:15%;
@@ -89,10 +88,10 @@
 	padding:12px 0 12px 0;	
 }
 #product-repeat-font{
-	font-size: 15px;
+	font-size: 20px;
 }
 #product-repeat-font2{
-	font-size:8px;
+	font-size:13px;
 }
 .category-label{
 	text-align:  center;
