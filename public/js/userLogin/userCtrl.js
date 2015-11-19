@@ -1,6 +1,13 @@
 var adminApp=angular.module('adminApp');
 adminApp.controller('userCtrl', function(userService, $scope, $location){
-	
+	userService.getUserName().then(function(res){
+				if(res.data==='current user not defined'){$scope.customerName=null}
+				else{
+					$scope.customerName='Welcome, ' + res.data.name;
+					$scope.loginOut=!$scope.loginOut;
+					console.log(res)
+				}
+			});
 	$scope.customerName='';
 	$scope.submitNewUser=function(user){
 		userService.newUserService(user);

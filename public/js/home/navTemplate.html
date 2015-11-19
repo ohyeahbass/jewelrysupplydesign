@@ -4,17 +4,17 @@
 
         <nav class="top-nav #404040 z-depth-0">
             <div class ='row'>  
-                <div class='top-nav-items col s1 offset-s8'ng-if='user===!""'>
-                    <a href='#loginModal' modal><p class='top-nav-items'>{{customerName}}</p></a>
+                <div class='top-nav-items col s1'>
+                    <p class='top-nav-items'>{{customerName}}</p>
                 </div>                  
-                <div class='top-nav-items col s1 offset-s8'ng-if='!user'>
+                <div class='top-nav-items col s1 offset-s8'ng-if='customerName===null'>
                     <a href='#loginModal' modal ><p class='top-nav-items'>login/register</p></a>
                 </div>
-                <div class='top-nav-items col s1'>
-                    <a ng-if='user'href='/logout' onclick = 'Materialize.toast("Logged Out")'><p class='top-nav-items'>logout</p></a>
+                <div class='top-nav-items col s1 offset-s8'ng-if='customerName' >
+                    <a href='/logout' onclick = 'Materialize.toast("Logged Out")'><p class='top-nav-items'>logout</p></a>
                 </div>
-                <div class='top-nav-items col s1' ng-controller='ShoppingCartCtrl'>
-                    <a href='#/checkout'><p class='top-nav-items'>cart  {{cartCount}}</p></a>
+                <div ng-controller='ShoppingCartCtrl'>
+                    <a href='#/checkout'><p class='top-nav-items'>cart  {{cartCount}}<p/></a>
                 </div>
             </div>
         </nav>   

@@ -6,9 +6,11 @@
 	background-color: #404040;
 	padding-bottom:-40px;
 	margin-right:-20px;
+	text-align: center;
 }
 .top-nav-items{
 	color:#FEC5D9;
+	text-align: center;
 }
 .navbar-logo{
 	width:200px;
