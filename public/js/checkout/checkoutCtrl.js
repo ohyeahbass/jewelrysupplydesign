@@ -56,9 +56,9 @@ adminApp.controller('checkoutCtrl', function($scope, checkoutSrvc, userService, 
 	}
 	
 	
-	userService.getUserName().then(function(res){
-		console.log(res,"user")
-		$scope.checkOutInfo=res.data;
-	})
+	// userService.getUserName().then(function(res){
+	// 	console.log(res,"user")
+	// 	$scope.checkOutInfo=res.data;
+	// })
 	
 });
