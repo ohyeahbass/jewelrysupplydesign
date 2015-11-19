@@ -66,7 +66,7 @@
 
 
 
-<div class='container row'>
+<div class='products-contain row'>
 	<div class='product-in-products col s12 m6 l3' ng-repeat='product in products | filter: {types:key}'>
 		<div class="card med">
 			<div class="card-image waves-effect waves-block waves-light">
@@ -74,7 +74,7 @@
 			</div>
 			<div class="card-content">
 				<span id='product-repeat-font'class="card-title activator grey-text text-darken-4">{{product.name}}</span>
-        <span id='product-repeat-font2'class="card-title activator grey-text text-darken-4">{{product.shortDec}}</span>
+        <span id='product-repeat-font2'class="card-title activator grey-text text-darken-4">{{product.shortDesc}}</span>
 				<p><a ng-click='getDBProduct(product)'>{{product.price|currency}}</a></p>
 			</div>
 			
