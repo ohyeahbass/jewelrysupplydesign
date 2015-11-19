@@ -6,7 +6,7 @@
             <div class ='row'>                     
                 {{customerName}}
                 <div class='top-nav-items col s1 offset-s8'>
-                    <a href='#loginModal' modal ng-if='user'><p class='top-nav-items'>login/register</p></a>
+                    <a href='#loginModal' modal ng-if='!user'><p class='top-nav-items'>login/register</p></a>
                 </div>
                 <div class='top-nav-items col s1'>
                     <a ng-if='!user'href='/logout' onclick = 'Materialize.toast("Logged Out")'><p class='top-nav-items'>logout</p></a>
