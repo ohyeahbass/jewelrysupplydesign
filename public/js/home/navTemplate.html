@@ -9,7 +9,7 @@
                     <a href='#loginModal' modal ng-if='!user'><p class='top-nav-items'>login/register</p></a>
                 </div>
                 <div class='top-nav-items col s1'>
-                    <a ng-if='!user'href='/logout' onclick = 'Materialize.toast("Logged Out")'><p class='top-nav-items'>logout</p></a>
+                    <a ng-if='user'href='/logout' onclick = 'Materialize.toast("Logged Out")'><p class='top-nav-items'>logout</p></a>
                 </div>
                 <div class='top-nav-items col s1' ng-controller='ShoppingCartCtrl'>
                     <a href='#/checkout'><p class='top-nav-items'>cart  {{cartCount}}</p></a>
