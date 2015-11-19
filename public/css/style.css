@@ -73,11 +73,9 @@
 .card .med{
 	height:300px;
 }
-.category{
-	padding-top:15%;
-}
 .category-items{
 	height:150px;
+	width:100%;
 }
 .category-items-names{
 	color:#404040;
