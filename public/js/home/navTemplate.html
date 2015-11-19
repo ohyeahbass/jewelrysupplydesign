@@ -9,15 +9,50 @@
                     <a href='#loginModal' modal><p class='top-nav-items'ng-hide='loginOut'>login</p></a>
                 </div>
                 <div class='top-nav-items col s1'>
-                    <a href='#registerModal' modal><p class='top-nav-items' ng-hide='loginOut'>register</p></a>
+                    <a href='#registerModal' modal ng-if='user'><p class='top-nav-items' ng-hide='loginOut'>register</p></a>
                 </div>
                 <div class='top-nav-items col s1'>
-                    <a href='/logout' onclick = 'Materialize.toast("Logged Out")'><p class='top-nav-items'>logout</p></a>
+                    <a ng-if='!user'href='/logout' onclick = 'Materialize.toast("Logged Out")'><p class='top-nav-items'>logout</p></a>
                 </div>
                 <div class='top-nav-items col s1' ng-controller='ShoppingCartCtrl'>
                     <a href='#/checkout'><p class='top-nav-items'>cart  {{cartCount}}</p></a>
                 </div>
             </div>
+                                           <div id="loginModal" class="modal">
+                                <div class="modal-content">
+                                <div ng-show = '!customerName' class='inline'>
+
+                                                    
+                                                    <!--<button ng-click='showLog=!showLog'>hide</button>-->
+                                                    <div ng-hide = 'reglog'>
+                                                        <div class='reg-log-button'>
+                                                            register
+                                                            <button ng-click='reglog=!reglog'>login</button>
+                                                        </div>
+                                                        <div class='row'>
+                                                            <input class='register col s12'type="text" ng-model='user.email' placeholder='email'>
+                                                            <input class='register col s12 m6'type="text" ng-model='user.name' placeholder='name'>
+                                                            <input class='register col s12 m6'type="password" ng-model='user.password' placeholder='password'>
+                                                            <input class='register col s12 'type="text" ng-model='user.address' placeholder='address'>
+                                                            <input class='register col s12 m6'type="text" ng-model='user.city' placeholder='city'>
+                                                            <input class='register col s12 m2'type="text" ng-model='user.state' placeholder='state'>
+                                                            <input class='register col s12 m4'type="text" ng-model='user.zip' placeholder='zip'>
+                                                        </div>
+                                                        <button onclick="Materialize.toast('Thanks for Signing In!', 4000)" ng-click='submitNewUser(user)'>submit</button>
+                                                    </div> 
+                                                    <div ng-show='reglog'>
+                                                        <div class='reg-log-button'>
+                                                            login
+                                                            <button ng-click='reglog=!reglog'>register</button>
+                                                        </div>
+                                                        <input type="text" ng-model='user.email' placeholder="email"> 
+                                                        <input type="password" ng-model='user.password' placeholder="password"> 
+                                                        <button onclick="Materialize.toast()" ng-click='loginSubmit(user)'>submit</button>
+                                                    </div> 
+                                            </div>
+                            </div>
+                            
+                        </div>
         </nav>   
         <nav id='second-nav-all-pages'class = 'row N/A transparent z-depth-0'>
             <div class='col s5'>
