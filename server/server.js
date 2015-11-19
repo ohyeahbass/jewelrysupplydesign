@@ -58,8 +58,9 @@ app.post('/fulfill', FulfillCtrl.create)
 app.get('/fulfill', FulfillCtrl.read);
 
 var port = process.env.PORT || 3000;
-var mongoURI = process.env.MONGOLABURI;
+// var mongoURI = process.env.MONGOLABURI;
 // var mongoURI = 'mongodb://localhost:27017/dataBase';
+var mongoURI='mongodb://client:blah@ds055584.mongolab.com:55584/darciedb'
 mongoose.connect(mongoURI);
 mongoose.set('debug,true');
 app.listen(port, function(){
