@@ -30,8 +30,5 @@ adminApp.controller('userCtrl', function(userService, $scope, $location){
 			});
 		
 	}
-	// userService.getUserName().then(function(res){
-	// 			$scope.customerName=res.data.name;	
-	// });
-	
+
 })

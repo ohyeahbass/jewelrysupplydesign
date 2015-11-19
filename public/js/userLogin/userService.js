@@ -8,8 +8,8 @@ adminApp.service('userService', function($http,$q){
 			url:'http://localhost:3000/user',
 			data:user	
 		}).then(function(err, res){
-			if(err){ return err;}
-			else{return res;};
+			if(err){ console.log (err);}
+			else{console.log(res);};
 		})
 	}
 	
@@ -18,8 +18,9 @@ adminApp.service('userService', function($http,$q){
 			method:"POST",
 			url:'http://localhost:3000/login',
 			data:user
-		}).then(function(res,err){
+		}).then(function(res){
 			return res;
+			console.log(res)
 		})
 	}
 	this.getUserName=function(){
