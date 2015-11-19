@@ -13,16 +13,16 @@
 	width:200px;
 }
 .threes-navbar1{
-	margin: auto;
-    width: 60%;
-    padding: 10px;
+	display:flex;
+	flex-direction: row;
+	justify-content: space-around;
 }
 .bottom-nav-items-left{
-	color:#FEC5D9;
+	color:#404040;
 	
 }
 .bottom-nav-items-right{
-	color:#FEC5D9;
+	color:#404040;
 }
 
 .navbar{
@@ -38,10 +38,10 @@
 	margin-top:20px;
 }
 .threes-navbar2{
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
 	background-color: #404040;
+	margin: auto;
+    width: 60%;
+    padding: 10px;
 }
 /*homepage*/
 .home-container{
