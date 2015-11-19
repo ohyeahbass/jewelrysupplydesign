@@ -5,7 +5,7 @@ adminApp.service('adminService',['$http', '$q', function($http, $q){
 		var deferred=$q.defer();
 		$http({
 			method:'POST',
-			url:'http://localhost:3000/products',
+			url:'/products',
 			data:product
 		}).then(function(response){
 			var products=response.data;
@@ -18,7 +18,7 @@ adminApp.service('adminService',['$http', '$q', function($http, $q){
 		var deferred=$q.defer();
 		$http({
 			method:"GET",
-			url:'http://localhost:3000/products'
+			url:'/products'
 		}).then(function(res){
 			var products=res;
 
@@ -33,7 +33,7 @@ adminApp.service('adminService',['$http', '$q', function($http, $q){
 		}
 		return $http({
 			method:'PUT',
-			url:'http://localhost:3000/products',
+			url:'/products',
 			data:updatedProd
 		})
 		
@@ -41,7 +41,7 @@ adminApp.service('adminService',['$http', '$q', function($http, $q){
 	this.deleteProduct=function(id){
 		return $http({
 			method:"DELETE",
-			url:'http://localhost:3000/products/'+id
+			url:'/products/'+id
 			
 		})
 	}
@@ -50,7 +50,7 @@ adminApp.service('adminService',['$http', '$q', function($http, $q){
 		var deferred=$q.defer();
 		$http({
 			method:"GET",
-			url:'http://localhost:3000/order'
+			url:'/order'
 		}).then(function(res){
 		
 			var order=res;
@@ -63,7 +63,7 @@ adminApp.service('adminService',['$http', '$q', function($http, $q){
 	this.fulfillOrder=function(ord){
 		return $http({
 			method:"POST",
-			url:'fulfill',
+			url:'/fulfill',
 			data:ord
 		}).then(function(res){
 			return res.data
@@ -72,14 +72,14 @@ adminApp.service('adminService',['$http', '$q', function($http, $q){
 	this.deleteGetOrder=function(id){
 		return $http({
 			method:"DELETE",
-			url:'http://localhost:3000/order/'+id
+			url:'/order/'+id
 			
 		})
 	}
 	this.getFulfillOrder=function(){
 		return $http({
 			method:'GET',
-			url:'fulfill'
+			url:'/fulfill'
 		}).then(function(res){
 			
 			return res.data

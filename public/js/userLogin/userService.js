@@ -5,7 +5,7 @@ adminApp.service('userService', function($http,$q){
 		
 		$http({
 			method:'POST',
-			url:'http://localhost:3000/user',
+			url:'/user',
 			data:user	
 		}).then(function(err, res){
 			if(err){ console.log (err);}
@@ -16,7 +16,7 @@ adminApp.service('userService', function($http,$q){
 	this.loginSubmit=function(user){
 		return $http({
 			method:"POST",
-			url:'http://localhost:3000/login',
+			url:'/login',
 			data:user
 		}).then(function(res){
 			return res;
@@ -27,7 +27,7 @@ adminApp.service('userService', function($http,$q){
 		var deferred=$q.defer()
 		$http({
 			method:"GET",
-			url:'http://localhost:3000/user'
+			url:'/user'
 		}).then(function(res){
 			var userName=res;
 			deferred.resolve(userName)
