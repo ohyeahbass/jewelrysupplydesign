@@ -66,8 +66,8 @@
 
 
 
-<div class='container '>
-	<div class='product-in-products' ng-repeat='product in products | filter: {types:key}'>
+<div class='container row'>
+	<div class='product-in-products col s12 m6 l3' ng-repeat='product in products | filter: {types:key}'>
 		<div class="card med">
 			<div class="card-image waves-effect waves-block waves-light">
 				<img ng-click='getDBProduct(product)'class="activator" src="{{product.img2}}">
