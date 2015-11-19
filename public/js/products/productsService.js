@@ -5,7 +5,7 @@ adminApp.service('productsService', function($http, $q){
 	
 	$http({
 		method:"GET",
-		url:'http://localhost:3000/products'
+		url:'/products'
 	}).then(
 		function(res){
 			var products=res;
