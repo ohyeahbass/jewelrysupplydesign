@@ -3,7 +3,7 @@ adminApp.controller('userCtrl', function(userService, $scope, $location){
 	userService.getUserName().then(function(res){
 				if(res.data==='current user not defined'){$scope.customerName=null}
 				else{
-					$scope.customerName='Welcome, ' + res.data.name;
+					$scope.customerName= res.data.name;
 					$scope.loginOut=!$scope.loginOut;
 					console.log(res)
 				}
