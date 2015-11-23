@@ -1,17 +1,17 @@
-var express = require('express');
-var session = require('express-session');
-var passport = require('./services/passport');
-var bodyParser = require('body-parser');
-var cors = require('cors');
-var LocalStrategy = require('passport-local').Strategy;
-var mongoose = require('mongoose');
-var ProductCtrl = require('./controllers/ProductCtrl')
-var app = express();
-var UserCtrl=require('./controllers/UserCtrl')
-var config=require('./config')
-var OrderCtrl =require('./controllers/OrderCtrl')
-var FulfillCtrl=require('./controllers/FulfillCtrl')
+var express = 			require('express');
+var session = 			require('express-session');
+var passport = 			require('./services/passport');
+var bodyParser = 		require('body-parser');
+var cors = 				require('cors');
+var LocalStrategy = 	require('passport-local').Strategy;
+var mongoose = 			require('mongoose');
+var ProductCtrl = 		require('./controllers/ProductCtrl');
+var UserCtrl=			require('./controllers/UserCtrl');
+var config=				require('./config');
+var OrderCtrl =			require('./controllers/OrderCtrl');
+var FulfillCtrl=		require('./controllers/FulfillCtrl');
 
+var app = express();
 app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static(__dirname+'/../public'));
@@ -28,6 +28,7 @@ var isAuthed = function(req, res, next){
 	if(!req.isAuthenticated()) return res.sendStatus(401);
 	return next();
 };
+
 app.post('/user', UserCtrl.register);
 app.get('/user', UserCtrl.me);
 app.put('/user', isAuthed, UserCtrl.update);
@@ -35,9 +36,9 @@ app.post('/login', passport.authenticate('local',{
 	successRedirect:'/user'
 }))
 app.get('/logout', function(req,res){
- req.logout();
- req.session.destroy(function (err) {
-        res.redirect('/'); //Inside a callback… bulletproof!
+	req.logout();
+	req.session.destroy(function (err) {
+    	res.redirect('/'); //Inside a callback… bulletproof!
     });
 });
 
