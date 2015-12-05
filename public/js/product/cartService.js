@@ -1,8 +1,8 @@
 var adminApp=angular.module('adminApp');
 adminApp.service('cartService',function(){
 	
- 	var arr      = [];
-
+ 	var arr  = [];
+	var d    = new Date() 
 	this.getLocalItems=function() {
 		if (JSON.parse(localStorage.getItem('text'))) {
 			arr = JSON.parse(localStorage.getItem('text'));
@@ -11,23 +11,27 @@ adminApp.service('cartService',function(){
 	}()
 	this.addToCart = function(item) {
 		$(document).ready(function() {
- 						Materialize.toast('added to cart', 4000, 'toasts')
-					});
+ 			Materialize.toast('added to cart', 4000, 'toasts')
+		});			
     	var checkItem = false;
+		console.log(item.pQ)
+		item.qty=1;
+		item.itemTotal=item.pQ
     	var items = {
-     	   qty: 1,
-     	   _id: item._id,
-     	   name: item.name,
-     	   price: item.price,
-     	   img1: item.img1
-        
-    	}
-
+		   sku:   			  item.sku,
+     	   _id:   			  item._id,
+     	   title: 			  item.title,
+     	   img1:  			  item.img1,		   
+     	   qty:   			  item.qty,
+		   pQ:				  item.pQ,
+		   itemTotal:		  item.itemTotal
+    	};
+		console.log(items)
     	arr.forEach(function(cartItem) {
        		 if(cartItem._id === item._id) {
-       	     cartItem.qty++;
-       	     checkItem = true;
-        	}
+       	     	cartItem.qty++;
+       	     	checkItem = true;
+        	 }
     	});
 
     	if(checkItem === false) {

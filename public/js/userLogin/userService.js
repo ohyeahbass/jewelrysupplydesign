@@ -7,9 +7,8 @@ adminApp.service('userService', function($http,$q){
 			method:'POST',
 			url:'/user',
 			data:user	
-		}).then(function(err, res){
-			if(err){ console.log (err);}
-			else{console.log(res);};
+		}).then(function(res){
+			return res;
 		})
 	}
 	
@@ -20,7 +19,6 @@ adminApp.service('userService', function($http,$q){
 			data:user
 		}).then(function(res){
 			return res;
-			console.log(res)
 		})
 	}
 	this.getUserName=function(){

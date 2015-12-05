@@ -1,18 +1,17 @@
-var passport = require('passport');
+var passport =      require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-
-var User = require('../models/UserModel');
+var User =          require('../models/UserModel');
 
 passport.use(new LocalStrategy({
   usernameField: 'email',
   passwordField: 'password'
 }, function(email, password, done) {
-  User.findOne({ email: email })
-  .exec(function(err, user) {
-    if(err) done(err);
-    if(!user) return done(null, false);
-    if(user.verifyPassword(password)) return done(null, user);
-    return done(null, false);
+      User.findOne({ email: email })
+      .exec(function(err, user) {
+      if(err){done(err)};
+      if(!user){return done(null, false)};
+      if(user.verifyPassword(password)){return done(null, user)};
+      return done(null, false);
   });
 }));
 

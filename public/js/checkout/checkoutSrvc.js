@@ -6,6 +6,8 @@ adminApp.service('checkoutSrvc', function($http){
 			method:"POST",
 			url:'/order',
 			data: prodInfo
+		}).then(function(res){
+			console.log(res)
 		})
 	}
 	

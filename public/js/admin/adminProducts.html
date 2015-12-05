@@ -1,4 +1,4 @@
-<table class = 'bordered'>
+<!--<table class = 'bordered'>
 		<thead>
 			<tr>
 				<th data-field='name'>name</th>
@@ -113,4 +113,19 @@
 		</tbody>
 	</table>
 	<button ng-click="mustShow=!mustShow">edit</button>
-	<button ng-click="deleteProduct(product._id)">delete</button>
+	<button ng-click="deleteProduct(product._id)">delete</button>-->
+<admin-nav></admin-nav>
+<div class='products-contain row'>
+	<div class='product-in-products col s12 m6 l3' ng-repeat='product in products | filter: {types:key}'>
+		<div class="card med">
+			<div class="card-image waves-effect waves-block waves-light">
+				<img ng-click='getDBProduct(product)'class="activator" src="{{product.img2}}">
+			</div>
+			<div class="card-content">
+				<p id='product-repeat-font'class="card-title activator grey-text text-darken-4">{{product.name}}</p>
+				<a></a>
+			</div>
+			
+		</div>
+	</div>
+</div>

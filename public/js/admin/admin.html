@@ -1,30 +1,88 @@
 
-<div class= 'nav-template'>
-	<nav-template></nav-template>
-</div>
-<div class= 'admin-page-container'>
 
-	<div ng-controller='adminController'>
-		<button ng-click='newProd=!newProd' id='add-prod'>hide adding products</button>
-		<div ng-hide='newProd'>
-		<div class ='row' >
-			<input class='col s2'type="text"placeholder="name" ng-model='product.name'/>
-			<input class='col s2' type="text"placeholder="types" ng-model='product.types'/>
-			<input class='col s2' type="text"	placeholder="short description" ng-model='product.shortDesc'/>
-			<input class='col s1' type="text" placeholder="custom" ng-model='product.custom'>
-			<input class='col s3' type="text" placeholder='long description' ng-model='product.longDesc'/>
-			<input class='col s1' type="text" placeholder='qty' ng-model='product.qty'>
-			<input class='col s1' type="text" placeholder='price' ng-model='product.price'>
-			<input class='col s' type="text" placeholder = 'img' ng-model='product.img1'/>
-			<input class='col s' type="text" placeholder = 'img' ng-model='product.img2'/>
-			<input class='col s' type="text" placeholder = 'img' ng-model='product.img3'/>
-			<input class='col s' type="text" placeholder = 'img' ng-model='product.img4'/>
-			<input class='col s' type="text" placeholder = 'img' ng-model='product.img5'/>
-			<input class='col s' type="text" placeholder = 'img' ng-model='product.img6'/>
-			<input class='col s' type="text" placeholder = 'img' ng-model='product.img7'/>
-		</div>
+<div class= 'admin-page-container'>
+	<admin-nav></admin-nav>
 	
-		<button ng-click='submitNewProduct(product)'>submit</button>
+		<!--<div>
+			<button ng-click='getFulfillOrder()'>Fulfilled Order</button>
+			<button ng-click='hidefullOrders=!hidefullOrders'>hide/show fulfilled</button>
+			<admin-fulfill-dir></admin-fulfill-dir>
+			<div ng-hide='hidefullOrders'>
+				<get-fulfill-order></get-fulfill-order>
+			</div>
+		</div>-->
+	<div ng-controller='adminController'>
+		<div ng-hide='newProd'>
+			<div class ='row' >
+				<h1>add new products</h1>
+				<input class='col s12 m2'type="text"placeholder="name" ng-model='product.title'/>
+				<div class='col s12 m2'>
+					<select class="browser-default" name='category' id="category" ng-model='product.category'>
+						<option value="letterSets"	>letter sets</option>
+						<option value="designStamps">design stamps</option>
+						<option value="blanks"		>blanks</option>
+						<option value="misc"		> misc</option>
+					</select>
+				</div>
+				<div class='col s12 m2'>
+					<select class="browser-default" name='subcategory' ng-model='product.subCategory'>
+						<option value="cDPMerch"		>CDP Merch</option>
+						<option value="beadSmith"		>beadsmith</option>
+						<option value="impressArt"		>impressart</option>
+						<option value="urbanBeader"		>urban beader</option>
+						<option value="beadUcation"		>beaducation</option>
+						<option value="aluminum8G"		>aluminum 8 gauge beast blanks</option>
+						<option value="aluminum14Ga"	>aluminum14Gauge</option>
+						<option value="pewter"			>pewter</option>
+						<option value="copper"			>copper</option>
+						<option value="steel"			>steel</option>
+						<option value=".925SilverBlank"	>.925 silver</option>
+						<option value="tools"			>tools</option>
+						<option value="supplies"		>supplies</option>
+						<option value="storage"			>storage</option>
+						<option value="misc"			>misc</option>
+					</select>
+				</div>
+				<input class='col s2' 	type="text"  placeholder='Qty 1' 			ng-model='product.priceQty.pq1.qty'>
+				<input class='col s2' 	type="text"  placeholder='Price 1' 			ng-model='product.priceQty.pq1.price'>			
+				<input class='col s2' 	type="text"  placeholder='Qty 2' 			ng-model='product.priceQty.pq2.qty'>
+				<input class='col s2' 	type="text"  placeholder='Price 2' 			ng-model='product.priceQty.pq2.price'>
+				<input class='col s2' 	type="text"  placeholder='Qty 3' 			ng-model='product.priceQty.pq3.qty'>
+				<input class='col s2' 	type="text"  placeholder='Price 3' 			ng-model='product.priceQty.pq3.price'>
+				<input class='col s2' 	type="text"  placeholder='Qty 4' 			ng-model='product.priceQty.pq4.qty'>
+				<input class='col s2' 	type="text"  placeholder='Price 4' 			ng-model='product.priceQty.pq4.price'>
+				<input class='col s2' 	type="text"  placeholder='Qty 5' 			ng-model='product.priceQty.pq5.qty'>
+				<input class='col s2' 	type="text"  placeholder='Price 5' 			ng-model='product.priceQty.pq5.price'>
+				<input class='col s2' 	type="text"  placeholder='Wsale Qty1' 		ng-model='product.wholesalePriceQty.pq1.qty'>
+				<input class='col s2' 	type="text"  placeholder='Wsale Price1'		ng-model='product.wholesalePriceQty.pq1.price'>
+				<input class='col s2' 	type="text"  placeholder='Wsale Qty2' 		ng-model='product.wholesalePriceQty.pq2.qty'>
+				<input class='col s2' 	type="text"  placeholder='Wsale Price2' 	ng-model='product.wholesalePriceQty.pq2.price'>
+				<input class='col s2' 	type="text"  placeholder='Wsale Qty 3' 		ng-model='product.wholesalePriceQty.pq3.qty'>
+				<input class='col s2' 	type="text"  placeholder='Wsale Price 3' 	ng-model='product.wholesalePriceQty.pq3.price'>
+				<input class='col s2' 	type="text"  placeholder='Wsale Qty 4' 		ng-model='product.wholesalePriceQty.pq4.qty'>
+				<input class='col s2' 	type="text"  placeholder='Wsale Price 4' 	ng-model='product.wholesalePriceQty.pq4.price'>
+				<input class='col s2' 	type="text"  placeholder='Wsale Qty 5' 		ng-model='product.wholesalePriceQty.pq5.qty'>
+				<input class='col s2' 	type="text"  placeholder='Wsale Price 5' 	ng-model='product.wholesalePriceQty.pq5.price'>
+				<input class='col s12' 	type="text"  placeholder="sku"				ng-model='product.sku'/>
+				<input class='col s12' 	type="text"  placeholder="short description"ng-model='product.shortDesc'/>
+				<input class='col s12' 	type="text"  placeholder='long description' ng-model='product.longDesc'/>
+				<input class='col s12'  type="text"  placeholder='bullet 1'         ng-model='product.bullets.bullet1'>
+				<input class='col s12'  type="text"  placeholder='bullet 2'         ng-model='product.bullets.bullet2'>
+				<input class='col s12'  type="text"  placeholder='bullet 3'         ng-model='product.bullets.bullet3'>
+				<input class='col s12'  type="text"  placeholder='bullet 4'         ng-model='product.bullets.bullet4'>
+				<input class='col s12'  type="text"  placeholder='bullet 5'         ng-model='product.bullets.bullet5'>
+				<input class='col s12'  type="text"  placeholder='bullet 6'         ng-model='product.bullets.bullet6'>
+				<input class='col s12'  type="text"  placeholder='bullet 7'         ng-model='product.bullets.bullet7'>
+				<input class='col s12'  type="text"  placeholder='bullet 8'         ng-model='product.bullets.bullet8'>
+				<input class='col s12' 	type="text"  placeholder='img' 				ng-model='product.img1'/>
+				<input class='col s12' 	type="text"  placeholder='img' 				ng-model='product.img2'/>
+				<input class='col s12' 	type="text"  placeholder='img' 				ng-model='product.img3'/>
+				<input class='col s12' 	type="text"  placeholder='img' 				ng-model='product.img4'/>
+				<input class='col s12' 	type="text"  placeholder='img' 				ng-model='product.img5'/>
+				<input class='col s12' 		type="text" placeholder='img' 			ng-model='product.img6'/>
+				<input class='col s12' type="text" placeholder='img' 				ng-model='product.img7'/>
+			</div>
+			<button ng-click='submitNewProduct(product)'>submit</button>
 		</div>
 		<div>
 			<button ng-click='adminGetProducts()'>get products</button>
@@ -32,20 +90,8 @@
 			<admin-product-dir ng-hide='hideProd' ng-repeat='product in products'></admin-product-dir>
 		</div>
 		<div>
-			<button ng-click='getOrders()'>get orders</button>
-			<button ng-click='hideOrders=!hideOrders'>hide/show orders</button>
-			<div ng-hide='hideOrders'>
-				<admin-order-dir></admin-order-dir>
-			</div>
+			<a href='#/adminProducts'>Products</a>
 		</div>
-		<div>
-			<button ng-click='getFulfillOrder()'>Fulfilled Order</button>
-			<button ng-click='hidefullOrders=!hidefullOrders'>hide/show fulfilled</button>
-			<admin-fulfill-dir></admin-fulfill-dir>
-			<div ng-hide='hidefullOrders'>
-				<get-fulfill-order></get-fulfill-order>
-			</div>
-		</div>	
 	</div>
 </div>
 

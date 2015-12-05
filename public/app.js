@@ -47,12 +47,49 @@ adminApp.config(function($routeProvider){
 		.when('/tutorials',{
 			templateUrl:'js/tutorials/tutorials.html'	
 		})
-		.when('/productPage',{
-			templateUrl:'js/products/productPage.html',
+		.when('/productPage/:id',{
+			templateUrl:'js/product/productPage.html',
 			controller:'productController',
 			resolve:{
 				getLocalItems: function() {
 					return JSON.parse(localStorage.getItem('text'));
+				}
+			}
+		})
+		.when('/adminProducts',{
+			templateUrl:'js/admin/adminProducts.html',
+			controller:'adminProducts',
+			resolve: {
+				getDBProducts: function(productsService) {
+					return productsService.getProducts().then(function(res) {
+						return res;
+					});
+					
+				},
+				getLocalItems: function() {
+					return JSON.parse(localStorage.getItem('text'));
+				}
+				
+			}
+		})
+		.when('/adminOrderTemplate', {
+			templateUrl:'js/admin/adminOrderTemplate.html',
+			controller:"adminOrderCtrl",
+			resolve:{
+				getOrders: function(adminService){
+					return adminService.getOrder().then(
+					function(res){
+						return res;	
+					}) 
+				}
+			}
+		})
+		.when('/adminEditProduct',{
+			templateUrl:'js/admin/adminEditProduct',
+			controller:'adminEditProductCtrl',
+			resolve:{
+				getProduct:function(id){
+					
 				}
 			}
 		})

@@ -4,6 +4,7 @@ adminApp.controller('userCtrl', function(userService, $scope, $location){
 				if(res.data==='current user not defined'){$scope.customerName=null}
 				else{
 					$scope.customerName= res.data.name;
+					$scope.customerAdmin=res.data.admin;
 					$scope.loginOut=!$scope.loginOut;
 					console.log(res)
 				}
@@ -18,12 +19,13 @@ adminApp.controller('userCtrl', function(userService, $scope, $location){
 		userService.loginSubmit(user).then(function(res){
 		userService.getUserName().then(function(res){
 				if(res){
-					$scope.customerName='Welcome, ' + res.data.name;
+					$scope.customerName=res.data.name;
 					$scope.loginOut=!$scope.loginOut;
 					$('#loginModal').closeModal();
 					$(document).ready(function() {
  						Materialize.toast('Welcome, '+ res.data.name, 4000, 'toasts')
 					});
+					$scope.customerAdmin=res.data.admin;
 				}
 			});
 			

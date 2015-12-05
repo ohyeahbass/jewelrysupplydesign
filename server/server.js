@@ -10,8 +10,8 @@ var UserCtrl=			require('./controllers/UserCtrl');
 var config=				require('./config');
 var OrderCtrl =			require('./controllers/OrderCtrl');
 var FulfillCtrl=		require('./controllers/FulfillCtrl');
+var app =				express();
 
-var app = express();
 app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static(__dirname+'/../public'));
@@ -59,8 +59,8 @@ app.post('/fulfill', FulfillCtrl.create)
 app.get('/fulfill', FulfillCtrl.read);
 
 var port = process.env.PORT || 3000;
-var mongoURI = process.env.MONGOLABURI;
-// var mongoURI = 'mongodb://localhost:27017/dataBase';
+// var mongoURI = process.env.MONGOLABURI;
+var mongoURI = 'mongodb://localhost:27017/dataBase';
 
 mongoose.connect(mongoURI);
 mongoose.set('debug,true');

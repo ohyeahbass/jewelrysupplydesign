@@ -1,31 +1,32 @@
 var adminApp=angular.module('adminApp');
 adminApp.service('adminService',['$http', '$q', function($http, $q){
 	this.submitNewProduct=function(product){
-		
 		var deferred=$q.defer();
 		$http({
 			method:'POST',
 			url:'/products',
 			data:product
-		}).then(function(response){
-			var products=response.data;
-			deferred.resolve(products)
-			
-		})
-		return deferred.promise
+		}).then(
+			function(response){
+				var products=response.data;
+				deferred.resolve(products)	
+			})
+			return deferred.promise
 	}
+	
 	this.adminGetProducts=function(){
 		var deferred=$q.defer();
 		$http({
 			method:"GET",
 			url:'/products'
-		}).then(function(res){
-			var products=res;
-
-			deferred.resolve(products)
+		}).then(
+			function(res){
+				var products=res;
+				deferred.resolve(products)
 		})
 		return deferred.promise
 	}
+	
 	this.productEdit=function(id,prod){
 		var updatedProd={
 			id:id,

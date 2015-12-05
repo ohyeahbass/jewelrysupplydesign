@@ -1,0 +1,54 @@
+
+<div>
+	<div class= 'nav-template'>
+		<nav-template></nav-template>
+		
+	</div>
+</div>
+
+<div class = 'container'>
+	<div lclass='divider'></div>
+	<div class='row'>
+		<div class='col s8' id = 'product-page-info1' >
+			<img id="product-page-main-img"  materialboxed class="materialboxed responsive-img" width="550" ng-src="{{mainImage}}">
+			<ul class='prod-list-pics'>
+				<li><img class='product-page-img'  ng-click='mainImg(product.img1)'ng-src="{{product.img1}}" ></li>
+				<li><img class='product-page-img' ng-if='product.img2' ng-click='mainImg(product.img2)' ng-src="{{product.img2}}"></li>
+				<li><img class='product-page-img' ng-if='product.img3' ng-click='mainImg(product.img3)' ng-src="{{product.img3}}"></li>
+				<li><img class='product-page-img' ng-if='product.img4' ng-click='mainImg(product.img4)' ng-src="{{product.img4}}"></li>
+				<li><img class='product-page-img' ng-if='product.img5' ng-click='mainImg(product.img5)' ng-src="{{product.img5}}"></li>
+				<li><img class='product-page-img' ng-if='product.img6' ng-click='mainImg(product.img6)' ng-src="{{product.img6}}"></li>
+				<li><img class='product-page-img' ng-if='product.img7' ng-click='mainImg(product.img7)' ng-src="{{product.img7}}"></li>
+			</ul>
+		</div>
+		<div class = 'product-page-info2 col s4'>
+			<div class='name-price'>
+				<h4 class = 'product-page-desc'>{{product.name}}</h4>
+					<div ng-if='wholesaler===false'>
+						<select name='qty' id='qty' class="browser-default" ng-model='product.pQ'>
+							<option ng-repeat='priceqty in product.priceQty' value="{{priceqty.price}}">
+								Qty:{{priceqty.qty}}  {{priceqty.price | currency:"$"}}
+							 </option>
+						</select>
+					</div>
+					<div ng-if='wholesaler=== true'>
+						<select name='qty' id='qty' class="browser-default" ng-model='product.pQ'>
+							<option ng-repeat='priceqty in product.wholesalePriceQty' value='{{priceqty.price}}' >
+								Qty:{{priceqty.qty}}  {{priceqty.price | currency:"$"}}  
+							</option>
+						</select>
+					</div>
+			</div>
+			<h4>{{product.pQ | currency:'$'}}</h4>
+			<ul class="browser-default">
+				<li class="browser-default" ng-repeat='bullet in product.bullets'>{{bullet}}</li>
+			</ul>
+			<p class='product-page-desc'>{{product.longDesc}}</p>
+			<p class='product-page-desc'>{{product.type}}</p>
+			<div>	
+				<button class='inline' id='price-left'ng-click='addToCart(product)'>add to cart</button>
+			</div>		
+		</div>
+	</div>
+</div>
+<footer-temp></footer-temp>

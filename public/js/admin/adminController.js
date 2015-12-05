@@ -1,7 +1,14 @@
 var adminApp=angular.module('adminApp');
 adminApp.controller('adminController', function($scope, adminService){
 	$scope.submitNewProduct=function(product){
-		adminService.submitNewProduct(product)
+		console.log("submit")
+		adminService.submitNewProduct(product).then(function(res){
+			if(res){
+				$(document).ready(function() {
+ 						Materialize.toast('item add', 4000, 'toasts')
+				});
+			};
+		});
 	};
 	
 	
@@ -10,20 +17,13 @@ adminApp.controller('adminController', function($scope, adminService){
 			function(res){
 				$scope.products=res.data
 			}
-		)
+		);
 	};
 	
 		
 	$scope.deleteProduct=function(){}
 	
-	$scope.getOrders=function(){
-		adminService.getOrder().then(
-			function(res){
-					$scope.orders=res.data	
-					
-			}
-		) 
-	}
+
 	$scope.getFulfillOrder=function(){
 				adminService.getFulfillOrder().then(function(res){
 					$scope.fulfilled=res

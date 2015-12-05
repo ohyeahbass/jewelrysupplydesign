@@ -2,13 +2,12 @@ var Order = require('../models/OrderModel');
 var Product = require('../models/ProductModel')
 module.exports = {
 	create:function(req,res){
-		console.log('BODY', req.body)
 		var newOrder={
 			products:req.body,
 			customer:req.user._id
 			
 		}
-		console.log(req.user._id)
+		
 		Order.create(newOrder, function(err,result){
 			if(err){res.status(500).send(err); console.log('howdy')}
 			// else{res.json(result);}
@@ -17,11 +16,9 @@ module.exports = {
 			for (var i = 0; i < products.length; i++) {
 				
 				var qty = products[i].qty
-				console.log(1111111, qty)
 				Product.findById(products[i]._id, function(err, product) {
 					if(err){console.log(err); res.status(500).send(err)}
 					else{
-						console.log(232323, qty)
 						product.qty -= qty;
 						product.save()
 						productsUpdated += 1
