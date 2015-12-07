@@ -79,10 +79,15 @@ adminApp.config(function($routeProvider){
 				getOrders: function(adminService){
 					return adminService.getOrder().then(
 					function(res){
+						console.log(res)
 						return res;	
 					}) 
 				}
 			}
+		})
+		.when('/adminFullfilledOrders',{
+			templateUrl:'js/admin/adminFullfilledOrders.html',
+			controller:'adminFullfillCtrl',
 		})
 		.when('/adminEditProduct',{
 			templateUrl:'js/admin/adminEditProduct',

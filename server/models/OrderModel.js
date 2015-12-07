@@ -15,7 +15,6 @@ var schema = new Mongoose.Schema({
 	],
 	
 	customer:{type: Mongoose.Schema.Types.ObjectId, ref:'User'},
-	time : { type : Date, default: Date.now }
-	
+	time : { type : Date, default: Date.now }	
 })
 module.exports = Mongoose.model('order', schema)

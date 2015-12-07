@@ -2,13 +2,7 @@ var Order = require('../models/OrderModel');
 var Product = require('../models/ProductModel')
 module.exports = {
 	create:function(req,res){
-		var newOrder={
-			products:req.body,
-			customer:req.user._id
-			
-		}
-		
-		Order.create(newOrder, function(err,result){
+		Order.create(req.body, function(err,result){
 			if(err){res.status(500).send(err); console.log('howdy')}
 			// else{res.json(result);}
 			var products = req.body

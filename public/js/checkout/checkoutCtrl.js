@@ -24,11 +24,11 @@ adminApp.controller('checkoutCtrl', function($scope, checkoutSrvc, userService, 
 	$scope.payNow=function(prodInfo){
 		var buy=confirm('Ok to confirm purchase')
 		if(buy){
-		checkoutSrvc.checkOut(prodInfo).then(function(res){
-			alert('thanks for purchase!');
-			$('#checkoutModal').closeModal();
-			localStorage.clear('text');
-			$location.path('/');	
+			checkoutSrvc.checkOut(prodInfo).then(function(res){
+				alert('thanks for purchase!');
+				$('#checkoutModal').closeModal();
+				localStorage.clear('text');
+				$location.path('/');	
 		})
 		
 		}

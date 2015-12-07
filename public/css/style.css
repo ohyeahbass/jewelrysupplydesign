@@ -2,7 +2,7 @@
 
 .top-nav{
 	margin-top:-30px;
-	font-size: 12px;
+	font-size:12px;
 	background-color: #404040;
 	padding-bottom:-40px;
 	margin-right:-20px;
@@ -85,7 +85,9 @@
 .category-label{
 	color:#FFC6D9;
 	background-color:#404040;
-	padding:12px 0 12px 0;	
+	padding:12px 0 12px 0;
+	margin-top:0px;
+	margin-bottom: 0px;	
 }
 #product-repeat-font{
 	font-size: 20px;
@@ -187,3 +189,35 @@
 	width:60px;
 	height:60px;
 }
+.divider{
+	border-bottom: 1px solid black;
+}
+.card .card-content{
+	height:50px;
+	padding-bottom:-40px;
+}
+.customer-order-info{
+	margin-bottom:-20px;
+}
+.ship-info{
+	display:flex;
+	flex-direction:column;
+	justify-content: space-around;
+}
+.order-adjusting{
+	color: #FFC6D9;
+	width:100%;
+	padding-top:20px;
+	padding-bottom:20px;
+	text-align:  center;
+	border-radius: 2%;
+	border-bottom: 4px solid #37473f;
+	border-right:  4px solid #37473f;
+	border-top:  1px solid #37473f;
+	border-left:  1px solid #37473f;
+}
+.printing-label{
+	color: #FFC6D9;
+	text-shadow: 1px 1px #ad1457 
+}
+

@@ -1,15 +1,18 @@
 var Mongoose=require('mongoose');
 var schema=new Mongoose.Schema({
-	order:[
-		{
-			name: 			{type: String},
-			qty: 			{type: Number},
-			price: 			{type: Number},
-			font: 			{type:String},
-			additionalstamp:{type:String},
-			custom:			{type:String}
+	products: [
+		 {
+			sku:	  {type: Number},
+			_id:	  {type: String},
+			title:    {type: String},
+			img1:     {type: String},
+			qty: 	  {type: Number},
+			pQ:		  {type: Number},
+			itemTotal:{type: Number}
 		}
 	],
-	customer:{type: Mongoose.Schema.Types.ObjectId, ref:'User'}
-})
+	
+	customer:{type: Mongoose.Schema.Types.ObjectId, ref:'User'},
+	time : { type : Date, default: Date.now }
+});
 module.exports=Mongoose.model('fulfill', schema)

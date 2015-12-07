@@ -12,7 +12,7 @@ adminApp.service('adminService',['$http', '$q', function($http, $q){
 				deferred.resolve(products)	
 			})
 			return deferred.promise
-	}
+	};
 	
 	this.adminGetProducts=function(){
 		var deferred=$q.defer();
@@ -25,7 +25,7 @@ adminApp.service('adminService',['$http', '$q', function($http, $q){
 				deferred.resolve(products)
 		})
 		return deferred.promise
-	}
+	};
 	
 	this.productEdit=function(id,prod){
 		var updatedProd={
@@ -77,14 +77,12 @@ adminApp.service('adminService',['$http', '$q', function($http, $q){
 			
 		})
 	}
-	this.getFulfillOrder=function(){
+	this.getFullfilledOrders=function(){
 		return $http({
 			method:'GET',
 			url:'/fulfill'
 		}).then(function(res){
-			
-			return res.data
-			
+			return res;
 		})
 	}
 	
