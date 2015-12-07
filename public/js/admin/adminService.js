@@ -9,9 +9,9 @@ adminApp.service('adminService',['$http', '$q', function($http, $q){
 		}).then(
 			function(response){
 				var products=response.data;
-				deferred.resolve(products)	
-			})
-			return deferred.promise
+				deferred.resolve(products);	
+		})
+		return deferred.promise;
 	};
 	
 	this.adminGetProducts=function(){
@@ -31,21 +31,19 @@ adminApp.service('adminService',['$http', '$q', function($http, $q){
 		var updatedProd={
 			id:id,
 			updatedProd:prod
-		}
+		};
 		return $http({
 			method:'PUT',
 			url:'/products',
 			data:updatedProd
-		})
-		
-	}
+		});
+	};
 	this.deleteProduct=function(id){
 		return $http({
 			method:"DELETE",
-			url:'/products/'+id
-			
-		})
-	}
+			url:'/products/'+id			
+		});
+	};
 	
 	this.getOrder=function(){
 		var deferred=$q.defer();
@@ -53,12 +51,10 @@ adminApp.service('adminService',['$http', '$q', function($http, $q){
 			method:"GET",
 			url:'/order'
 		}).then(function(res){
-		
 			var order=res;
-
-			deferred.resolve(order)
+			deferred.resolve(order);
 		})
-		return deferred.promise
+		return deferred.promise;
 	}
 	
 	this.fulfillOrder=function(ord){
@@ -66,24 +62,24 @@ adminApp.service('adminService',['$http', '$q', function($http, $q){
 			method:"POST",
 			url:'/fulfill',
 			data:ord
-		}).then(function(res){
-			return res.data
-		})
-	}
+		}).then(
+			function(res){
+				return res.data;
+		});
+	};
 	this.deleteGetOrder=function(id){
 		return $http({
 			method:"DELETE",
-			url:'/order/'+id
-			
-		})
-	}
+			url:'/order/'+id	
+		});
+	};
 	this.getFullfilledOrders=function(){
 		return $http({
 			method:'GET',
 			url:'/fulfill'
 		}).then(function(res){
 			return res;
-		})
-	}
+		});
+	};
 	
-}])
+}]);

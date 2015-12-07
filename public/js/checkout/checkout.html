@@ -3,67 +3,58 @@
 </div>
 <div class='checkout-container'>
 	<div class='contained'>
-	<div  ng-repeat='prod in prodInfo track by $index'>
+		<div ng-repeat='prod in prodInfo track by $index'>
+			<div class='divider'></div>
+			<div id = 'checkout-row'class = 'row'>
+				<img class='checkout-prod-img1 col s2'src='{{prod.img1}}'></img>
+				<p class='col s3'>{{prod.title}}<br>item#{{prod.sku}}</p>
+				<p class='col s1'>price: {{prod.pQ | currency}}</p>
+				<p class='col s1'>X</p>
+				<p class='col s1'> 
+					qty: {{prod.qty}}<br>
+					<button ng-click='plus($index)'>+</button>
+					<button ng-click='minus($index)'>-</button>	
+				</p>
+				<p>total<br>{{prod.pQ*prod.qty | currency:'$'}}</p>
+			</div>
+		</div>
 		<div class='divider'></div>
-		<div id = 'checkout-row'class = 'row'>
-			<img class='checkout-prod-img1 col s2'src='{{prod.img1}}'></img>
-			<p class='col s3'>{{prod.title}}<br>item#{{prod.sku}}</p>
-			<p class='col s1'>price: {{prod.pQ | currency}}</p>
-			<p class='col s1'>X</p>
-			<p class='col s1'> 
-				qty: {{prod.qty}}<br>
-				<button ng-click='plus($index)'>+</button>
-				<button ng-click='minus($index)'>-</button>	
-			</p>
-			<p>total<br>{{prod.pQ*prod.qty | currency:'$'}}</p>
-	</div>
-</div>
-	<div class='divider'></div>
-	<div class = 'checkout-all-prods'>
-		<div class = 'subtotal row'>
-			<select ng-model='shipping' class="browser-default" >
-				<option value = '0' selected="selected">standard free</option>
-				<option value ='5.50'                  >priority $5.50</option>
-			</select>
-			subtotal: {{subTotal|currency}}
+		<div class = 'checkout-all-prods'>
+			<div class = 'subtotal row'>
+				<select ng-model='shipping' class="browser-default" >
+					<option value = '0' selected="selected">standard free</option>
+					<option value ='5.50'                  >priority $5.50</option>
+				</select>
+				subtotal: {{subTotal|currency}}
+			</div>
+			<div class ='total'>
+				<a id='checkout-bttn'class='btn' href='#checkoutModal' modal>checkout</a>
+				total: {{total |currency}}
+			</div>
 		</div>
-		<div class ='total'>
-    		<a id='checkout-bttn'class='btn' href='#checkoutModal' modal>checkout</a>
-			total: {{total |currency}}
-		</div>
-
-		<!--<div class = 'tax'>
-			tax:{{tax|currency}}
-		</div>-->
-</div>
-
-		<!-- Modal Trigger -->
-
 <!-- Modal Structure -->
-<div id="checkoutModal" class="modal">
-    <div class="modal-content">
-		<div class='row'>
-        <input  ng-model='checkOutInfo.name'class='col s3'type="text" placeholder="name">
-		<input ng-model='checkOutInfo.email'class='col s6' type="email" placeholder='email'>
-		<input ng-model='checkOutInfo.address'class='col s7' type="text" placeholder='address'>
-		<input ng-model='checkOutInfo.city'class='col s2' type="text" placeholder='city'>
-		<input ng-model='checkOutInfo.state'class='col s2' type="text" placeholder='state'>
-		<input ng-model='checkOutInfo.zip'class='col s1' type="text" placeholder = 'zip'>
-		<input class='col s6' type="text" placeholder='credit card'>
-		<input class='col s2' type="text" placeholder="cardtype">
-		<input class='col s2' type="text" placeholder="ccv">
-		<input class='col s2' type="text" placeholder='exp'>
-    </div>
+		<div id="checkoutModal" class="modal">
+			<div class="modal-content">
+				<div class='row'>
+					<input ng-model='checkOutInfo.name'   class='col s3'type="text"   placeholder="name">
+					<input ng-model='checkOutInfo.email'  class='col s6' type="email" placeholder='email'>
+					<input ng-model='checkOutInfo.address'class='col s7' type="text"  placeholder='address'>
+					<input ng-model='checkOutInfo.city'   class='col s2' type="text"  placeholder='city'>
+					<input ng-model='checkOutInfo.state'  class='col s2' type="text"  placeholder='state'>
+					<input ng-model='checkOutInfo.zip'    class='col s1' type="text"  placeholder = 'zip'>
+					<input class='col s6' type="text" placeholder='credit card'>
+					<input class='col s2' type="text" placeholder="cardtype">
+					<input class='col s2' type="text" placeholder="ccv">
+					<input class='col s2' type="text" placeholder='exp'>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button ng-click="payNow(prodInfo)">pay now</button>
+			</div>
+		</div>
 	</div>
+</div>
 
-    <div class="modal-footer">
-		
-        <button ng-click="payNow(prodInfo)">pay now</button>
-    </div>
-</div>
-	</div>
-	</div>
-</div>
 <footer-temp></footer-temp>
 
 

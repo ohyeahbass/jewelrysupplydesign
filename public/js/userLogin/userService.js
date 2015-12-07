@@ -2,16 +2,14 @@ var adminApp=angular.module('adminApp');
 adminApp.service('userService', function($http,$q){
 	
 	this.newUserService=function(user){
-		
 		$http({
 			method:'POST',
 			url:'/user',
 			data:user	
 		}).then(function(res){
 			return res;
-		})
-	}
-	
+		});
+	};
 	this.loginSubmit=function(user){
 		return $http({
 			method:"POST",
@@ -19,20 +17,20 @@ adminApp.service('userService', function($http,$q){
 			data:user
 		}).then(function(res){
 			return res;
-		})
-	}
+		});
+	};
 	this.getUserName=function(){
 		var deferred=$q.defer()
 		$http({
 			method:"GET",
 			url:'/user'
-		}).then(function(res){
-			var userName=res;
-			deferred.resolve(userName)
+		}).then(
+			function(res){
+				var userName=res;
+				deferred.resolve(userName)
 		},function(err){
 			deferred.reject(err)
 		})			
 		return deferred.promise	
-		}
-	
-})
+	};
+});

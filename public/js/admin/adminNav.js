@@ -3,4 +3,4 @@ adminApp.directive('adminNav', function(){
 	return{
 		templateUrl:'js/admin/adminNav.html'
 	}
-})
+});

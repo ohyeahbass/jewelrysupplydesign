@@ -14,7 +14,7 @@ adminApp.config(function($routeProvider){
 						if(res.data.admin!==true){
 							$location.path('/');
 						};	
-					})
+					});
 				}
 			}
 		})
@@ -64,7 +64,6 @@ adminApp.config(function($routeProvider){
 					return productsService.getProducts().then(function(res) {
 						return res;
 					});
-					
 				},
 				getLocalItems: function() {
 					return JSON.parse(localStorage.getItem('text'));
@@ -92,11 +91,6 @@ adminApp.config(function($routeProvider){
 		.when('/adminEditProduct',{
 			templateUrl:'js/admin/adminEditProduct',
 			controller:'adminEditProductCtrl',
-			resolve:{
-				getProduct:function(id){
-					
-				}
-			}
 		})
 		.otherwise('/',{
 			redirectTo:'/'

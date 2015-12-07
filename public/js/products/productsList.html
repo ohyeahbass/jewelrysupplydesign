@@ -68,18 +68,18 @@
 
 <div class='products-contain row'>
 	<div class='product-in-products col s12 m6 l3' ng-repeat='product in products | filter: {types:key}'>
-    <a ng-href="#/productPage/{{product._id}}">
-		<div class="card med" ng-click=''>
-			<div class="card-image waves-effect waves-block waves-light">
-				<img ng-click='getDBProduct(product)'class="activator" src="{{product.img2}}">
-			</div>
-			<div class="card-content">
-				<p id='product-repeat-font'class="card-title activator grey-text text-darken-4">{{product.name}}</p>
-        <p id='product-repeat-font2'class="card-title activator grey-text text-darken-4">{{product.shortDesc}}</p>
-				<p>{{product.price|currency}}</p>
-			</div>
-		</div>
-    </a>
+        <a ng-href="#/productPage/{{product._id}}">
+            <div class="card med" ng-click=''>
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img ng-click='getDBProduct(product)'class="activator" src="{{product.img2}}">
+                </div>
+                <div class="card-content">
+                    <p id='product-repeat-font' class="card-title activator grey-text text-darken-4">{{product.name}}</p>
+                    <p id='product-repeat-font2'class="card-title activator grey-text text-darken-4">{{product.shortDesc}}</p>
+                    <p                                                                              >{{product.price|currency}}</p>
+                </div>
+            </div>
+        </a>
 	</div>
 </div>
 <footer-temp></footer-temp>

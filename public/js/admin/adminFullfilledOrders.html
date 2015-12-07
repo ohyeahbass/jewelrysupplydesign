@@ -1,50 +1,50 @@
 <admin-nav></admin-nav>
 <div class='row' >
-<div ng-repeat='order in orders' class="card med col s12">
-	<div class='admin-order-divider'></div>	
-	<button ng-click='fulfillOrder(order)'>check fulfilled</button>
-	<div class='customer-order-info pink lighten-3 row z-depth-2'>
-		<p id='product-repeat-font2'class="card-title activator grey-text text-darken-4 col s3">name</p>
-		<p id='product-repeat-font2'class="card-title activator grey-text text-darken-4 col s3">email</p>
-		<p id='product-repeat-font2'class="card-title activator grey-text text-darken-4 col s3">Reciept #</p>
-		<p id='product-repeat-font2'class="card-title activator grey-text text-darken-4 col s3">Order Date</p>
-		
-	</div>
-	<div class='customer-order-info pink lighten-3 row z-depth-2'>
-		<p id='product-repeat-font2'class="card-title activator grey-text text-darken-4 col s3">{{order.customer.name}}</p>
-		<p id='product-repeat-font2'class="card-title activator grey-text text-darken-4 col s3">{{order.customer.email}}</p>
-		<p id='product-repeat-font2'class="card-title activator grey-text text-darken-4 col s3">{{order._id}}</p>
-		<p id='product-repeat-font2'class="card-title activator grey-text text-darken-4 col s3">{{order.time}}</p>
-	</div>
-	<div class='row'>
-		<div class='col s8'ng-repeat='item in order.products'>
-			<div>
-				<div class="card-content row">
-					<p id='product-repeat-font'class="card-title activator grey-text text-darken-4 col s3">Name</p>
-					<p id='product-repeat-font2'class="card-title activator grey-text text-darken-4 col s3">Sku</p>				
-					<p id='product-repeat-font2'class="card-title activator grey-text text-darken-4 col s3">Quanity</p>
-					<p id='product-repeat-font2'class="card-title activator grey-text text-darken-4 col s3">Total Price</p>
+	<div ng-repeat='order in orders' class="card med col s12">
+		<div class='admin-order-divider'></div>	
+		<button ng-click='fulfillOrder(order)'>check fulfilled</button>
+		<div class='customer-order-info pink lighten-3 row z-depth-2'>
+			<p id='product-repeat-font2'class="card-title activator grey-text text-darken-4 col s3">name</p>
+			<p id='product-repeat-font2'class="card-title activator grey-text text-darken-4 col s3">email</p>
+			<p id='product-repeat-font2'class="card-title activator grey-text text-darken-4 col s3">Reciept #</p>
+			<p id='product-repeat-font2'class="card-title activator grey-text text-darken-4 col s3">Order Date</p>
+			
+		</div>
+		<div class='customer-order-info pink lighten-3 row z-depth-2'>
+			<p id='product-repeat-font2'class="card-title activator grey-text text-darken-4 col s3">{{order.customer.name}}</p>
+			<p id='product-repeat-font2'class="card-title activator grey-text text-darken-4 col s3">{{order.customer.email}}</p>
+			<p id='product-repeat-font2'class="card-title activator grey-text text-darken-4 col s3">{{order._id}}</p>
+			<p id='product-repeat-font2'class="card-title activator grey-text text-darken-4 col s3">{{order.time}}</p>
+		</div>
+		<div class='row'>
+			<div class='col s8'ng-repeat='item in order.products'>
+				<div>
+					<div class="card-content row">
+						<p id='product-repeat-font' class="card-title activator grey-text text-darken-4 col s3">Name</p>
+						<p id='product-repeat-font2'class="card-title activator grey-text text-darken-4 col s3">Sku</p>				
+						<p id='product-repeat-font2'class="card-title activator grey-text text-darken-4 col s3">Quanity</p>
+						<p id='product-repeat-font2'class="card-title activator grey-text text-darken-4 col s3">Total Price</p>
+					</div>
+					<div class="card-content row">
+						<p id='product-repeat-font' class="card-title activator grey-text text-darken-4 col s2">{{item.title}}</p>
+						<p id='product-repeat-font2'class="card-title activator grey-text text-darken-4 col s3">{{item.sku}}</p>
+						<p id='product-repeat-font2'class="card-title activator grey-text text-darken-4 col s2">{{item.qty}}</p>
+						<p id='product-repeat-font2'class="card-title activator grey-text text-darken-4 col s2">{{item.itemTotal|currency}}</p>
+					</div>
+					
 				</div>
-				<div class="card-content row">
-					<p id='product-repeat-font'class="card-title activator grey-text text-darken-4 col s2">{{item.title}}</p>
-					<p id='product-repeat-font2'class="card-title activator grey-text text-darken-4 col s3">{{item.sku}}</p>
-					<p id='product-repeat-font2'class="card-title activator grey-text text-darken-4 col s2">{{item.qty}}</p>
-					<p id='product-repeat-font2'class="card-title activator grey-text text-darken-4 col s2">{{item.itemTotal|currency}}</p>
-				</div>
-				
+				<div class ='divider'></div>
 			</div>
-			<div class ='divider'></div>
-		</div>
-		<div class='ship-info col s4 pink lighten-2 z-depth-2'>
-			<p class='order-adjusting blue-grey darken-1'><a class='printing-label'>Print Shipping Label</a></p>
-			<p class='order-adjusting blue-grey darken-1'><a class='printing-label' ng-click='fulfillOrder(order)'>Mark As Shipped</a></p>
-			<p>Customer Shipping Info</p>
-			<p>{{order.customer.name}}<br>
-			{{order.customer.address}}<br>
-			{{order.customer.city}}<br>
-			{{order.customer.state}}<br>
-			{{order.customer.zip}}</p>
+			<div class='ship-info col s4 pink lighten-2 z-depth-2'>
+				<p class='order-adjusting blue-grey darken-1'><a class='printing-label'>Print Shipping Label</a></p>
+				<p class='order-adjusting blue-grey darken-1'><a class='printing-label' ng-click='fulfillOrder(order)'>Mark As Shipped</a></p>
+				<p>Customer Shipping Info</p>
+				<p>{{order.customer.name}}<br>
+				{{order.customer.address}}<br>
+				{{order.customer.city}}<br>
+				{{order.customer.state}}<br>
+				{{order.customer.zip}}</p>
+			</div>
 		</div>
 	</div>
-</div>
 </div>	

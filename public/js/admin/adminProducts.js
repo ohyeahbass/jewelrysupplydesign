@@ -19,7 +19,7 @@ adminApp.controller('adminProducts', function($scope, adminService, productsServ
 	$scope.getItem=function(id){ 
 		adminService.getItem(id).then(
 			function(res){
-				console.log(res)
+
 			}
 		)
 	}

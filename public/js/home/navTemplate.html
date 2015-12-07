@@ -10,7 +10,9 @@
                   <a href='#loginModal' modal ><p class='top-nav-items'>login/register</p></a>
              </div>
              <div class='top-nav-items col s1 offset-s8'ng-if='customerName' >
-                  <a href='/logout' onclick = 'Materialize.toast("Logged Out")'><p class='top-nav-items'>logout</p></a>
+                  <a href='/logout' onclick = 'Materialize.toast("Logged Out")'>
+                       <p class='top-nav-items'>logout</p>
+                  </a>
              </div>
              <div ng-if='!customerAdmin'class='top-nav-items col s1' ng-controller='ShoppingCartCtrl'>
                   <a href='#/checkout'><p class='top-nav-items'>cart  {{cartCount}}<p/></a>
@@ -29,18 +31,18 @@
             <div ng-show = '!customerName' class='inline'> 
                 <div ng-hide = 'reglog'>
                     <div class='row'>
-                        <input class='register col s12'type="text" ng-model='user.email' placeholder='email'>
-                        <input class='register col s12 m6'type="text" ng-model='user.name' placeholder='name'>
+                        <input class='register col s12'   type="text"     ng-model='user.email'    placeholder='email'>
+                        <input class='register col s12 m6'type="text"     ng-model='user.name'     placeholder='name'>
                         <input class='register col s12 m6'type="password" ng-model='user.password' placeholder='password'>
-                        <input class='register col s12 'type="text" ng-model='user.address' placeholder='address'>
-                        <input class='register col s12 m6'type="text" ng-model='user.city' placeholder='city'>
-                        <input class='register col s12 m2'type="text" ng-model='user.state' placeholder='state'>
-                        <input class='register col s12 m4'type="text" ng-model='user.zip' placeholder='zip'>
+                        <input class='register col s12'   type="text"     ng-model='user.address'  placeholder='address'>
+                        <input class='register col s12 m6'type="text"     ng-model='user.city'     placeholder='city'>
+                        <input class='register col s12 m2'type="text"     ng-model='user.state'    placeholder='state'>
+                        <input class='register col s12 m4'type="text"     ng-model='user.zip'      placeholder='zip'>
                     </div>
                     <button onclick="Materialize.toast('Thanks for Signing In!', 4000)" ng-click='submitNewUser(user)'>submit</button>
                 </div> 
                 <div>      
-                    <input type="text" ng-model='user.email' placeholder="email"> 
+                    <input type="text"     ng-model='user.email'    placeholder="email"> 
                     <input type="password" ng-model='user.password' placeholder="password"> 
                     <button onclick="Materialize.toast()" ng-click='loginSubmit(user)'>submit</button>
                 </div> 
@@ -52,7 +54,9 @@
     <!--Logo-->
     <div class='logos'>
         <div class ='threes-navbar2 center-align'>
-            <a href="#!" ><img class="navbar-logo" src="img/jdslogo.jpg" alt=""></a>
+            <a href="#!" >
+                <img class="navbar-logo" src="img/jdslogo.jpg">
+            </a>
         </div>
     </div>
     
@@ -62,16 +66,16 @@
         <div class='cold'>
             <ul class ='threes-navbar1'>
                 <li class='navbar'>
-                    <a class='bottom-nav-items-left' href='#/about'>about</a>
+                    <a class='bottom-nav-items-left'  href='#/about'                                    >about</a>
                 </li>
                 <li class='navbar' >
-                    <a class='bottom-nav-items-left' href='#/productsList' id='last-item-nav-list-left'>products</a>   
+                    <a class='bottom-nav-items-left'  href='#/productsList' id='last-item-nav-list-left'>products</a>   
                 </li>
                 <li class='navbar' >
-                    <a class='bottom-nav-items-left' href='#/featuredArtist'>featured artist</a>
+                    <a class='bottom-nav-items-left'  href='#/featuredArtist'                           >featured artist</a>
                 </li>
                 <li class= 'navbar'>
-                    <a class='bottom-nav-items-right' href='#/contact' id='last-item-nav-list-right'>contact</a>
+                    <a class='bottom-nav-items-right' href='#/contact' id='last-item-nav-list-right'    >contact</a>
                 </li>
             </ul>
         </div>

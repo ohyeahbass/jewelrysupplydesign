@@ -19,9 +19,9 @@ app.use(session({
 	secret:'blah',
 	saveUninitialized:true,
 	resave:true
-	}))
+	}));
 app.use(passport.initialize());
-app.use(passport.session())
+app.use(passport.session());
 
 
 var isAuthed = function(req, res, next){

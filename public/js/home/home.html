@@ -2,42 +2,44 @@
 <div ng-controller='homeCtrl'>
 <nav-template></nav-template>
 <div class='home-container'>
-<!--<button ng-click='adminPage()'>adminpage</button>-->
-<!--<home-page-nav></home-page-nav>-->
-
 	<div>
 		<img class='home-img'src='img/Jewlerypic.jpg' alt="">
 	</div>
-<div>
-	<div class = 'row'>
-		<div class="col s12 m4" ng-click='getNewItems()'>
-         <div class="card">
-            <span class="card-title"><p class="card-title-p">New Products</p></span>
-            <div class="card-image">
-              <img class='front-page-cards'src="https://img1.etsystatic.com/117/2/6809605/il_570xN.859059073_cgww.jpg">
+    <div>
+	   <div class = 'row'>
+	       <div class="col s12 m4" ng-click='getNewItems()'>
+               <div class="card">
+                  <span class="card-title">
+                      <p class="card-title-p">New Products</p>
+                  </span>
+                  <div class="card-image">
+                      <img class='front-page-cards'src="https://img1.etsystatic.com/117/2/6809605/il_570xN.859059073_cgww.jpg">
+                  </div>
+               </div>
+           </div>
+		   <div class="col s12 m4">
+               <div class="card">
+                  <span class="card-title">
+                      <p class="card-title-p">Sale Items</p>
+                  </span>
+                  <div class="card-image">
+                      <img class='front-page-cards'src="https://img0.etsystatic.com/033/0/6809605/il_170x135.551431920_tlp6.jpg">
+                  </div>
+               </div>
+           </div>
+		   <div class="col s12 m4">
+               <div class="card">
+                   <a href='#/tutorials'>
+                        <span class="card-title">
+                            <p class="card-title-p">Tutorials</p>
+                        </span>
+                        <div class="card-image">                           
+                            <img class='front-page-cards'src="img/youTube.jpg">
+                        </div>
+                   </a>
+               </div>
             </div>
-         </div>
+	   </div>
     </div>
-		<div class="col s12 m4">
-          <div class="card">
-            <span class="card-title"><p class="card-title-p">Sale Items</p></span>
-            <div class="card-image">
-              <img class='front-page-cards'src="https://img0.etsystatic.com/033/0/6809605/il_170x135.551431920_tlp6.jpg">
-            </div>
-          </div>
-        </div>
-		<div class="col s12 m4">
-          <div class="card">
-            <a href='#/tutorials'>
-            <span class="card-title"><p class="card-title-p">Tutorials</p></span>
-            <div class="card-image">                           
-              <img class='front-page-cards'src="img/youTube.jpg">
-            </div>
-            </a>
-          </div>
-        </div>
-	</div>
-</div>
-
 </div>
 <footer-temp></footer-temp>

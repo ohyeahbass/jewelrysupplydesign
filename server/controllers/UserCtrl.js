@@ -9,7 +9,7 @@ module.exports = {
                 return res.status(500).json(err)
             } else {
                 user.password = null;
-                return res.json(user)
+                return res.json(user);
             }
         });
     },

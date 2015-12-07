@@ -12,7 +12,7 @@
 		<div class='col s8' id = 'product-page-info1' >
 			<img id="product-page-main-img"  materialboxed class="materialboxed responsive-img" width="550" ng-src="{{mainImage}}">
 			<ul class='prod-list-pics'>
-				<li><img class='product-page-img'  ng-click='mainImg(product.img1)'ng-src="{{product.img1}}" ></li>
+				<li><img class='product-page-img'                      ng-click='mainImg(product.img1)'ng-src="{{product.img1}}" ></li>
 				<li><img class='product-page-img' ng-if='product.img2' ng-click='mainImg(product.img2)' ng-src="{{product.img2}}"></li>
 				<li><img class='product-page-img' ng-if='product.img3' ng-click='mainImg(product.img3)' ng-src="{{product.img3}}"></li>
 				<li><img class='product-page-img' ng-if='product.img4' ng-click='mainImg(product.img4)' ng-src="{{product.img4}}"></li>
@@ -38,17 +38,17 @@
 							</option>
 						</select>
 					</div>
-			</div>
-			<h4>{{product.pQ | currency:'$'}}</h4>
-			<ul class="browser-default">
-				<li class="browser-default" ng-repeat='bullet in product.bullets'>{{bullet}}</li>
-			</ul>
-			<p class='product-page-desc'>{{product.longDesc}}</p>
-			<p class='product-page-desc'>{{product.type}}</p>
-			<div>	
-				<button class='inline' id='price-left'ng-click='addToCart(product)'>add to cart</button>
-			</div>		
-		</div>
-	</div>
+			    </div>
+				<h4>{{product.pQ | currency:'$'}}</h4>
+				<ul class="browser-default">
+					<li class="browser-default" ng-repeat='bullet in product.bullets'>{{bullet}}</li>
+				</ul>
+				<p class='product-page-desc'>{{product.longDesc}}</p>
+				<p class='product-page-desc'>{{product.type}}</p>
+				<div>	
+					<button class='inline' id='price-left'ng-click='addToCart(product)'>add to cart</button>
+				</div>		
+		  </div>
+	 </div>
 </div>
 <footer-temp></footer-temp>

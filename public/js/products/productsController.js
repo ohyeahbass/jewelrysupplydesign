@@ -4,17 +4,11 @@ adminApp.controller('productsController', function($scope, productsService, getD
     
     $scope.products = getDBProducts.data;
     
-    $scope.addToCart=function(item){cartService.addToCart(item);}
+    $scope.addToCart=function(item){
+        cartService.addToCart(item);
+    };
     
-    // $scope.getDBProduct=function(product){
-    //      productService.setter(product)
-    //      $location.path('/productPage')
-    // }
-    // $scope.getDBProduct=function(prod){
-    //    productsService.getDBProduct(prod);
-    // }
     $scope.filter=function(key){
-        console.log('setting key: ', key);
-        $scope.key=key
-    }
-})
+        $scope.key=key;
+    };
+});

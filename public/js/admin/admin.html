@@ -2,15 +2,6 @@
 
 <div class= 'admin-page-container'>
 	<admin-nav></admin-nav>
-	
-		<!--<div>
-			<button ng-click='getFulfillOrder()'>Fulfilled Order</button>
-			<button ng-click='hidefullOrders=!hidefullOrders'>hide/show fulfilled</button>
-			<admin-fulfill-dir></admin-fulfill-dir>
-			<div ng-hide='hidefullOrders'>
-				<get-fulfill-order></get-fulfill-order>
-			</div>
-		</div>-->
 	<div ng-controller='adminController'>
 		<div ng-hide='newProd'>
 			<div class ='row' >
@@ -83,14 +74,6 @@
 				<input class='col s12' type="text" placeholder='img' 				ng-model='product.img7'/>
 			</div>
 			<button ng-click='submitNewProduct(product)'>submit</button>
-		</div>
-		<div>
-			<button ng-click='adminGetProducts()'>get products</button>
-			<button ng-click='hideProd=!hideProd'>hide products</button>
-			<admin-product-dir ng-hide='hideProd' ng-repeat='product in products'></admin-product-dir>
-		</div>
-		<div>
-			<a href='#/adminProducts'>Products</a>
 		</div>
 	</div>
 </div>
